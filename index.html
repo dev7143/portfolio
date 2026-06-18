@@ -549,18 +549,24 @@
                 <span class="project-tag">IO 分配</span>
             </div>
             <p class="project-desc">设计十字路口信号灯时序逻辑，包含主干道与支干道红绿灯协调控制、行人过街请求处理、紧急车辆优先通行等功能。完成完整的 IO 分配表，使用 SCL 语言编写控制程序，实现精准的时序切换与故障安全保护。</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:30px">
-                <div class="vid-box" style="min-height:auto;margin-bottom:0">
-                    <video controls preload="metadata" playsinline style="width:100%;height:auto;display:block;min-height:200px;max-height:380px;object-fit:contain;background:#000">
-                        <source src="videos/东西南北红绿灯对称模式.mp4" type="video/mp4">
-                    </video>
-                    <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(0,0,0,0.85),transparent);color:rgba(255,255,255,0.8);font-size:11px;padding:20px 12px 8px;font-family:'Courier New',Consolas,monospace;letter-spacing:1px;text-align:center;pointer-events:none">&#x25B6; 对称模式 · 东西&amp;nbsp;南北</div>
+            <div class="project-videos">
+                <div class="vid-card">
+                    <div class="vid-box">
+                        <video controls preload="metadata" playsinline>
+                            <source src="videos/东西南北红绿灯对称模式.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="vid-label">对称模式 · 东西等时</div>
+                    <p class="vid-desc">东西方向与南北方向绿灯时长相同，适用于车流量均衡的十字路口场景。</p>
                 </div>
-                <div class="vid-box" style="min-height:auto;margin-bottom:0">
-                    <video controls preload="metadata" playsinline style="width:100%;height:auto;display:block;min-height:200px;max-height:380px;object-fit:contain;background:#000">
-                        <source src="videos/东西南北红绿灯非对称模式.mp4" type="video/mp4">
-                    </video>
-                    <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(0,0,0,0.85),transparent);color:rgba(255,255,255,0.8);font-size:11px;padding:20px 12px 8px;font-family:'Courier New',Consolas,monospace;letter-spacing:1px;text-align:center;pointer-events:none">&#x25B6; 非对称模式 · 主干优先</div>
+                <div class="vid-card">
+                    <div class="vid-box">
+                        <video controls preload="metadata" playsinline>
+                            <source src="videos/东西南北红绿灯非对称模式.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="vid-label">非对称模式 · 主干优先</div>
+                    <p class="vid-desc">主干道绿灯时长大于支干道，配合行人过街请求与车辆感应信号，实现动态配时控制。</p>
                 </div>
             </div>
             
@@ -806,6 +812,7 @@ document.getElementById('modal').addEventListener('click',function(e){if(e.targe
 </script>
 </body>
 </html>
+
 
 
 
