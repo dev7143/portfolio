@@ -549,80 +549,6 @@
                 <span class="project-tag">IO 分配</span>
             </div>
             <p class="project-desc">设计十字路口信号灯时序逻辑，包含主干道与支干道红绿灯协调控制、行人过街请求处理、紧急车辆优先通行等功能。完成完整的 IO 分配表，使用 SCL 语言编写控制程序，实现精准的时序切换与故障安全保护。</p>
-            <div class="project-placeholders">
-                <svg class="img-card" viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f0f5ff"/><stop offset="100%" stop-color="#e8f0fe"/></linearGradient>
-                        <linearGradient id="poleGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a3a6b"/><stop offset="100%" stop-color="#0a2647"/></linearGradient>
-                    </defs>
-                    <rect width="520" height="380" rx="8" fill="url(#sky1)"/>
-                    <!-- Road -->
-                    <rect x="0" y="280" width="520" height="100" fill="#4a4a5a" rx="0"/>
-                    <rect x="0" y="280" width="520" height="6" fill="#fff" opacity="0.1"/>
-                    <!-- Lane markings -->
-                    <line x1="0" y1="330" x2="100" y2="330" stroke="#fff" stroke-width="2" stroke-dasharray="20 15" opacity="0.3"/>
-                    <line x1="140" y1="330" x2="260" y2="330" stroke="#fff" stroke-width="2" stroke-dasharray="20 15" opacity="0.3"/>
-                    <line x1="300" y1="330" x2="420" y2="330" stroke="#fff" stroke-width="2" stroke-dasharray="20 15" opacity="0.3"/>
-                    <line x1="460" y1="330" x2="520" y2="330" stroke="#fff" stroke-width="2" stroke-dasharray="20 15" opacity="0.3"/>
-                    <!-- Pole -->
-                    <rect x="48" y="40" width="14" height="242" rx="3" fill="url(#poleGrad)"/>
-                    <rect x="42" y="272" width="26" height="12" rx="4" fill="#1a3a6b"/>
-                    <!-- Signal head housing -->
-                    <rect x="32" y="40" width="46" height="120" rx="8" fill="#2a3a5a" stroke="#1a3a6b" stroke-width="1.5"/>
-                    <rect x="34" y="42" width="42" height="116" rx="6" fill="#1a2a4a"/>
-                    <!-- Red light -->
-                    <circle cx="55" cy="66" r="14" fill="#ff4d4d" opacity="0.9"/>
-                    <circle cx="55" cy="66" r="10" fill="#ff6666" opacity="0.4"/>
-                    <circle cx="55" cy="66" r="4" fill="#fff" opacity="0.2"/>
-                    <!-- Yellow light -->
-                    <circle cx="55" cy="100" r="14" fill="#ffcc00" opacity="0.7"/>
-                    <circle cx="55" cy="100" r="4" fill="#fff" opacity="0.2"/>
-                    <!-- Green light -->
-                    <circle cx="55" cy="134" r="14" fill="#00cc66" opacity="0.7"/>
-                    <circle cx="55" cy="134" r="4" fill="#fff" opacity="0.2"/>
-                    <!-- Light glow effects -->
-                    <circle cx="55" cy="66" r="22" fill="#ff4d4d" opacity="0.08"/>
-                    <!-- Cross-arm -->
-                    <rect x="52" y="52" width="80" height="8" rx="3" fill="#1a3a6b"/>
-                    <!-- Secondary signal (pedestrian) -->
-                    <rect x="112" y="52" width="28" height="60" rx="5" fill="#2a3a5a" stroke="#1a3a6b" stroke-width="1"/>
-                    <circle cx="126" cy="70" r="8" fill="#ff4d4d" opacity="0.9"/>
-                    <circle cx="126" cy="92" r="8" fill="#fff" opacity="0.3"/>
-                    <rect x="120" y="82" width="12" height="3" rx="1" fill="#fff" opacity="0.4"/>
-                    <!-- Timing diagram area -->
-                    <rect x="140" y="40" width="360" height="120" rx="6" fill="#fff" stroke="#c8d4e3" stroke-width="1" opacity="0.7"/>
-                    <text x="160" y="62" font-size="11" fill="#1a3a6b" font-weight="600">时序逻辑 / Timing Diagram</text>
-                    <!-- Red timing bar -->
-                    <rect x="160" y="76" width="140" height="10" rx="3" fill="#ff4d4d" opacity="0.6"/>
-                    <rect x="300" y="76" width="80" height="10" rx="3" fill="#ddd"/>
-                    <!-- Yellow timing bar -->
-                    <rect x="160" y="96" width="40" height="10" rx="3" fill="#ddd"/>
-                    <rect x="200" y="96" width="40" height="10" rx="3" fill="#ffcc00" opacity="0.6"/>
-                    <rect x="240" y="96" width="140" height="10" rx="3" fill="#ddd"/>
-                    <!-- Green timing bar -->
-                    <rect x="160" y="116" width="80" height="10" rx="3" fill="#ddd"/>
-                    <rect x="240" y="116" width="140" height="10" rx="3" fill="#00cc66" opacity="0.5"/>
-                    <!-- Labels -->
-                    <text x="150" y="80" font-size="9" fill="#888">R</text>
-                    <text x="150" y="100" font-size="9" fill="#888">Y</text>
-                    <text x="150" y="120" font-size="9" fill="#888">G</text>
-                    <text x="310" y="138" font-size="9" fill="#aaa">t (s)</text>
-                    <!-- IO assignment table -->
-                    <rect x="160" y="175" width="200" height="65" rx="4" fill="#fff" stroke="#c8d4e3" stroke-width="0.8"/>
-                    <text x="170" y="192" font-size="10" fill="#1a3a6b" font-weight="600">IO 分配表</text>
-                    <line x1="160" y1="198" x2="360" y2="198" stroke="#c8d4e3" stroke-width="0.5"/>
-                    <text x="170" y="212" font-size="9" fill="#555">I0.0 启动 I0.1 急停 I0.2 传感器</text>
-                    <text x="170" y="228" font-size="9" fill="#555">Q0.0 红灯 Q0.1 黄灯 Q0.2 绿灯</text>
-                    <!-- SCL badge -->
-                    <rect x="380" y="180" width="80" height="22" rx="11" fill="#2d7dd2" opacity="0.12"/>
-                    <text x="394" y="195" font-size="11" fill="#2d7dd2" font-weight="600">SCL 编程</text>
-                    <!-- Cars on road -->
-                    <rect x="160" y="295" width="36" height="18" rx="4" fill="#ff6666" opacity="0.3"/>
-                    <rect x="168" y="300" width="12" height="8" rx="2" fill="#fff" opacity="0.3"/>
-                    <rect x="340" y="310" width="36" height="18" rx="4" fill="#6699ff" opacity="0.25"/>
-                    <rect x="348" y="315" width="12" height="8" rx="2" fill="#fff" opacity="0.25"/>
-                </svg>
-            </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:30px">
                 <div class="vid-box" style="min-height:auto;margin-bottom:0">
                     <video controls preload="metadata" playsinline style="width:100%;height:auto;display:block;min-height:200px;max-height:380px;object-fit:contain;background:#000">
@@ -659,61 +585,6 @@
             </div>
             <p class="project-desc">在 Factory IO 仿真环境中搭建传送带 3D 场景，实现物料换向控制。通过 PLC 与 Factory IO 实时联动，编写换向逻辑程序，实现传送带的启动、停止、正反转切换及传感器信号反馈。</p>
             <div class="project-placeholders">
-                <svg class="img-card" viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f0f5ff"/><stop offset="100%" stop-color="#e4ecf7"/></linearGradient>
-                        <linearGradient id="beltGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a5a6a"/><stop offset="100%" stop-color="#4a4a5a"/></linearGradient>
-                    </defs>
-                    <rect width="520" height="380" rx="8" fill="url(#bg2)"/>
-                    <!-- Floor -->
-                    <rect x="0" y="290" width="520" height="90" fill="#d0d8e4" rx="0"/>
-                    <rect x="0" y="290" width="520" height="2" fill="#c0c8d4"/>
-                    <!-- Floor grid -->
-                    <line x1="0" y1="320" x2="520" y2="320" stroke="#c8d0dc" stroke-width="0.5" stroke-dasharray="10 10"/>
-                    <line x1="0" y1="350" x2="520" y2="350" stroke="#c8d0dc" stroke-width="0.5" stroke-dasharray="10 10"/>
-                    <!-- Conveyor frame -->
-                    <rect x="30" y="200" width="460" height="32" rx="4" fill="#3a4a6a"/>
-                    <rect x="30" y="200" width="460" height="4" rx="2" fill="#5a7aaa"/>
-                    <!-- Conveyor belt surface -->
-                    <rect x="34" y="206" width="452" height="16" rx="2" fill="url(#beltGrad)"/>
-                    <line x1="34" y1="212" x2="486" y2="212" stroke="#6a6a7a" stroke-width="0.5" stroke-dasharray="6 4"/>
-                    <!-- Rollers -->
-                    <circle cx="60" cy="216" r="16" fill="#5a6a8a" stroke="#3a4a6a" stroke-width="1.5"/>
-                    <circle cx="60" cy="216" r="6" fill="#4a5a7a"/>
-                    <circle cx="150" cy="216" r="16" fill="#5a6a8a" stroke="#3a4a6a" stroke-width="1.5"/>
-                    <circle cx="150" cy="216" r="6" fill="#4a5a7a"/>
-                    <circle cx="260" cy="216" r="16" fill="#5a6a8a" stroke="#3a4a6a" stroke-width="1.5"/>
-                    <circle cx="260" cy="216" r="6" fill="#4a5a7a"/>
-                    <circle cx="370" cy="216" r="16" fill="#5a6a8a" stroke="#3a4a6a" stroke-width="1.5"/>
-                    <circle cx="370" cy="216" r="6" fill="#4a5a7a"/>
-                    <circle cx="460" cy="216" r="16" fill="#5a6a8a" stroke="#3a4a6a" stroke-width="1.5"/>
-                    <circle cx="460" cy="216" r="6" fill="#4a5a7a"/>
-                    <!-- Package / box on conveyor -->
-                    <rect x="190" y="158" width="60" height="48" rx="3" fill="#d4943a" stroke="#b07a28" stroke-width="1.5"/>
-                    <rect x="190" y="158" width="60" height="48" rx="3" fill="#e8a84a" opacity="0.5"/>
-                    <line x1="190" y1="182" x2="250" y2="182" stroke="#b07a28" stroke-width="0.8"/>
-                    <line x1="220" y1="158" x2="220" y2="206" stroke="#b07a28" stroke-width="0.8"/>
-                    <text x="205" y="193" font-size="9" fill="#fff" font-weight="600">BOX</text>
-                    <!-- Direction arrows -->
-                    <polygon points="480,212 492,208 492,216" fill="#2d7dd2" opacity="0.5"/>
-                    <polygon points="492,212 504,208 504,216" fill="#2d7dd2" opacity="0.5"/>
-                    <!-- Sensor -->
-                    <rect x="300" y="170" width="10" height="30" rx="3" fill="#2d7dd2"/>
-                    <rect x="302" y="172" width="6" height="8" rx="1" fill="#6ab0ff" opacity="0.5"/>
-                    <line x1="305" y1="200" x2="305" y2="206" stroke="#2d7dd2" stroke-width="1" stroke-dasharray="2 2"/>
-                    <!-- Sensor beam -->
-                    <line x1="300" y1="185" x2="280" y2="185" stroke="#ff6633" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
-                    <!-- PLC connection -->
-                    <rect x="30" y="100" width="80" height="40" rx="6" fill="#0a2647"/>
-                    <text x="42" y="124" font-size="11" fill="#fff" font-weight="600">PLC S7-1200</text>
-                    <line x1="70" y1="140" x2="70" y2="200" stroke="#2d7dd2" stroke-width="1.5" stroke-dasharray="4 3"/>
-                    <!-- Factory IO badge -->
-                    <rect x="380" y="100" width="110" height="26" rx="13" fill="#2d7dd2" opacity="0.1"/>
-                    <text x="393" y="117" font-size="11" fill="#2d7dd2" font-weight="600">Factory IO 仿真</text>
-                    <!-- Label -->
-                    <text x="170" y="270" font-size="12" fill="#1a3a6b" font-weight="600">换向传送带 3D 场景</text>
-                    <text x="170" y="284" font-size="10" fill="#8899aa">Reversing Conveyor System</text>
-                </svg>
                 <div class="vid-box">
                     <video controls preload="metadata" playsinline>
                         <source src="videos/换向机械手.mp4" type="video/mp4">
@@ -743,103 +614,42 @@
             </div>
             <p class="project-desc">实现自动化小车的五种运动控制模式：手动模式、自动模式、呼叫模式、寸动模式、随动模式。分别使用 LAD（梯形图）和 SCL（结构化文本）两种编程语言实现，对比不同编程范式的实现思路与代码结构。涵盖限位保护、急停处理、模式互锁等安全逻辑。</p>
             <div class="project-placeholders">
-                <svg class="img-card" viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f0f5ff"/><stop offset="100%" stop-color="#e8f0fe"/></linearGradient>
-                    </defs>
-                    <rect width="520" height="420" rx="8" fill="url(#bg3)"/>
-                    <!-- Track -->
-                    <line x1="20" y1="360" x2="500" y2="360" stroke="#3a4a6a" stroke-width="3"/>
-                    <line x1="20" y1="370" x2="500" y2="370" stroke="#3a4a6a" stroke-width="3"/>
-                    <line x1="30" y1="355" x2="30" y2="375" stroke="#5a6a8a" stroke-width="1.5"/>
-                    <line x1="80" y1="355" x2="80" y2="375" stroke="#5a6a8a" stroke-width="1.5"/>
-                    <line x1="130" y1="355" x2="130" y2="375" stroke="#5a6a8a" stroke-width="1.5"/>
-                    <line x1="180" y1="355" x2="180" y2="375" stroke="#5a6a8a" stroke-width="1.5"/>
-                    <line x1="230" y1="355" x2="230" y2="375" stroke="#5a6a8a" stroke-width="1.5"/>
-                    <line x1="280" y1="355" x2="280" y2="375" stroke="#5a6a8a" stroke-width="1.5"/>
-                    <line x1="330" y1="355" x2="330" y2="375" stroke="#5a6a8a" stroke-width="1.5"/>
-                    <line x1="380" y1="355" x2="380" y2="375" stroke="#5a6a8a" stroke-width="1.5"/>
-                    <line x1="430" y1="355" x2="430" y2="375" stroke="#5a6a8a" stroke-width="1.5"/>
-                    <line x1="480" y1="355" x2="480" y2="375" stroke="#5a6a8a" stroke-width="1.5"/>
-                    <!-- Cart body -->
-                    <rect x="190" y="260" width="120" height="80" rx="6" fill="#3a5a8a" stroke="#1a3a6b" stroke-width="2"/>
-                    <rect x="190" y="260" width="120" height="80" rx="6" fill="#4a7abb" opacity="0.3"/>
-                    <!-- Cart cabin -->
-                    <rect x="250" y="260" width="60" height="60" rx="4" fill="#2a4a7a"/>
-                    <rect x="258" y="270" width="44" height="30" rx="2" fill="#8fc8ff" opacity="0.3"/>
-                    <!-- Cart wheels -->
-                    <circle cx="210" cy="360" r="18" fill="#3a3a4a" stroke="#2a2a3a" stroke-width="2"/>
-                    <circle cx="210" cy="360" r="8" fill="#5a5a6a"/>
-                    <circle cx="210" cy="360" r="3" fill="#7a7a8a"/>
-                    <circle cx="290" cy="360" r="18" fill="#3a3a4a" stroke="#2a2a3a" stroke-width="2"/>
-                    <circle cx="290" cy="360" r="8" fill="#5a5a6a"/>
-                    <circle cx="290" cy="360" r="3" fill="#7a7a8a"/>
-                    <!-- Small guide wheels -->
-                    <circle cx="210" cy="340" r="6" fill="#5a6a8a"/>
-                    <circle cx="290" cy="340" r="6" fill="#5a6a8a"/>
-                    <!-- Antenna / sensor on top -->
-                    <line x1="260" y1="260" x2="260" y2="230" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <circle cx="260" cy="228" r="5" fill="#2d7dd2" opacity="0.5"/>
-                    <!-- 5 modes - circular layout -->
-                    <text x="190" y="340" font-size="9" fill="#fff" opacity="0.7">AGV</text>
-                    <!-- Mode labels in a ring around the cart -->
-                    <rect x="100" y="200" width="42" height="20" rx="10" fill="#2d7dd2" opacity="0.12"/>
-                    <text x="107" y="214" font-size="9" fill="#2d7dd2" font-weight="600">手动</text>
-                    <rect x="160" y="170" width="42" height="20" rx="10" fill="#2d7dd2" opacity="0.12"/>
-                    <text x="167" y="184" font-size="9" fill="#2d7dd2" font-weight="600">自动</text>
-                    <rect x="220" y="158" width="42" height="20" rx="10" fill="#ff8800" opacity="0.12"/>
-                    <text x="227" y="172" font-size="9" fill="#ff8800" font-weight="600">呼叫</text>
-                    <rect x="300" y="170" width="42" height="20" rx="10" fill="#2d7dd2" opacity="0.12"/>
-                    <text x="307" y="184" font-size="9" fill="#2d7dd2" font-weight="600">寸动</text>
-                    <rect x="350" y="200" width="42" height="20" rx="10" fill="#2d7dd2" opacity="0.12"/>
-                    <text x="355" y="214" font-size="9" fill="#2d7dd2" font-weight="600">随动</text>
-                    <!-- Connection lines from modes to cart -->
-                    <line x1="121" y1="220" x2="190" y2="280" stroke="#2d7dd2" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.3"/>
-                    <line x1="181" y1="190" x2="200" y2="260" stroke="#2d7dd2" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.3"/>
-                    <line x1="241" y1="178" x2="245" y2="260" stroke="#ff8800" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.3"/>
-                    <line x1="321" y1="190" x2="300" y2="260" stroke="#2d7dd2" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.3"/>
-                    <line x1="371" y1="220" x2="310" y2="280" stroke="#2d7dd2" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.3"/>
-                    <!-- LAD vs SCL comparison panels -->
-                    <rect x="40" y="50" width="200" height="90" rx="6" fill="#fff" stroke="#c8d4e3" stroke-width="1"/>
-                    <rect x="40" y="50" width="200" height="22" rx="6" fill="#1a3a6b"/>
-                    <rect x="40" y="62" width="200" height="10" fill="#1a3a6b"/>
-                    <text x="80" y="65" font-size="10" fill="#fff" font-weight="600">LAD 梯形图版本</text>
-                    <text x="52" y="88" font-size="9" fill="#555">|--| |--+---( ) 启动</text>
-                    <text x="52" y="102" font-size="9" fill="#555">|--|/|--+---( ) 停止</text>
-                    <text x="52" y="116" font-size="9" fill="#555">|--[CMP]---(M) 模式选择</text>
-                    <rect x="280" y="50" width="200" height="90" rx="6" fill="#fff" stroke="#c8d4e3" stroke-width="1"/>
-                    <rect x="280" y="50" width="200" height="22" rx="6" fill="#2d7dd2"/>
-                    <rect x="280" y="62" width="200" height="10" fill="#2d7dd2"/>
-                    <text x="315" y="65" font-size="10" fill="#fff" font-weight="600">SCL 结构化文本版本</text>
-                    <text x="292" y="88" font-size="9" fill="#555">IF start AND NOT stop THEN</text>
-                    <text x="292" y="102" font-size="9" fill="#555">  mode := select;</text>
-                    <text x="292" y="116" font-size="9" fill="#555">  run();</text>
-                    <text x="292" y="130" font-size="9" fill="#555">END_IF;</text>
-                </svg>
-                <div style="display:flex;flex-direction:column;gap:10px">
-                    <div class="vid-box" style="min-height:auto">
-                        <video controls preload="metadata" playsinline style="max-height:240px;min-height:160px">
+                            <div class="project-videos">
+                <div class="vid-card">
+                    <div class="vid-box">
+                        <video controls preload="metadata" playsinline>
                             <source src="videos/小车5模式切换.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="sub-videos">
-                        <div class="sub-vid">
+                    <div class="vid-label">5种模式切换演示</div>
+                    <p class="vid-desc">展示小车在手动、自动、呼叫、寸动、随动五种模式下的完整切换过程与运动表现。</p>
+                </div>
+                <div class="sub-videos">
+                    <div class="sub-vid">
+                        <div class="vid-box">
                             <video controls preload="metadata" playsinline>
                                 <source src="videos/手自动小车LAD版.mp4" type="video/mp4">
                             </video>
-                            <div class="sub-vid-label">LAD 梯形图版</div>
                         </div>
-                        <div class="sub-vid">
+                        <div class="sub-vid-label">手自动控制 — LAD 梯形图版</div>
+                        <p class="sub-vid-desc">使用梯形图（LAD）语言实现的手自动切换控制程序，展示梯形图逻辑的直观性与可靠性。</p>
+                    </div>
+                    <div class="sub-vid">
+                        <div class="vid-box">
                             <video controls preload="metadata" playsinline>
                                 <source src="videos/手自动小车SCL版.mp4" type="video/mp4">
                             </video>
-                            <div class="sub-vid-label">SCL 结构化文本版</div>
                         </div>
+                        <div class="sub-vid-label">手自动控制 — SCL 结构化文本版</div>
+                        <p class="sub-vid-desc">使用结构化文本（SCL）语言实现的手自动切换控制程序，对比高级语言编程的灵活性与可维护性。</p>
                     </div>
                 </div>
             </div>
+                        
             
         </div>
+    </div>
+
     </div>
 </section>
 <section class="section section-alt" id="project4">
@@ -859,95 +669,22 @@
                 <span class="project-tag">模拟量采集</span>
             </div>
             <p class="project-desc">使用 S7-1200 通过 Modbus / USS 协议控制两台变频器运行，实现电机调速、正反转切换及故障复位。同时接入模拟量温度传感器，完成温度信号的采集、滤波与工程量转换，实现超温报警与自动保护。</p>
-            <div class="project-placeholders">
-                <svg class="img-card" viewBox="0 0 1100 340" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f0f5ff"/><stop offset="100%" stop-color="#e8f0fe"/></linearGradient>
-                        <linearGradient id="vfdScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a2647"/><stop offset="100%" stop-color="#1a3a6b"/></linearGradient>
-                    </defs>
-                    <rect width="1100" height="340" rx="8" fill="url(#bg4)"/>
-                    <!-- Title -->
-                    <text x="420" y="26" font-size="13" fill="#1a3a6b" font-weight="700">系统拓扑 / System Topology</text>
-                    <!-- PLC -->
-                    <rect x="40" y="50" width="100" height="60" rx="6" fill="#0a2647"/>
-                    <rect x="40" y="50" width="100" height="60" rx="6" fill="#1a3a6b" opacity="0.5"/>
-                    <text x="58" y="85" font-size="12" fill="#fff" font-weight="600">S7-1200</text>
-                    <text x="70" y="100" font-size="9" fill="#8fc8ff">PLC</text>
-                    <!-- Communication bus -->
-                    <line x1="140" y1="80" x2="200" y2="80" stroke="#2d7dd2" stroke-width="2"/>
-                    <text x="155" y="72" font-size="9" fill="#2d7dd2">Modbus</text>
-                    <!-- VFD 1 -->
-                    <rect x="200" y="40" width="120" height="80" rx="6" fill="#fff" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <rect x="200" y="40" width="120" height="24" rx="6" fill="#2d7dd2"/>
-                    <rect x="200" y="54" width="120" height="10" fill="#2d7dd2"/>
-                    <text x="226" y="57" font-size="10" fill="#fff" font-weight="600">变频器 #1</text>
-                    <rect x="212" y="72" width="40" height="20" rx="3" fill="url(#vfdScreen)"/>
-                    <text x="218" y="86" font-size="8" fill="#6ab0ff">35.2Hz</text>
-                    <rect x="264" y="72" width="40" height="20" rx="3" fill="#e8f0fe"/>
-                    <text x="270" y="86" font-size="8" fill="#1a3a6b">RUN</text>
-                    <!-- VFD 2 -->
-                    <rect x="340" y="40" width="120" height="80" rx="6" fill="#fff" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <rect x="340" y="40" width="120" height="24" rx="6" fill="#2d7dd2"/>
-                    <rect x="340" y="54" width="120" height="10" fill="#2d7dd2"/>
-                    <text x="366" y="57" font-size="10" fill="#fff" font-weight="600">变频器 #2</text>
-                    <rect x="352" y="72" width="40" height="20" rx="3" fill="url(#vfdScreen)"/>
-                    <text x="358" y="86" font-size="8" fill="#6ab0ff">18.7Hz</text>
-                    <rect x="404" y="72" width="40" height="20" rx="3" fill="#e8f0fe"/>
-                    <text x="410" y="86" font-size="8" fill="#1a3a6b">STOP</text>
-                    <!-- Connection from PLC to VFD2 -->
-                    <line x1="260" y1="80" x2="340" y2="80" stroke="#2d7dd2" stroke-width="1.5" stroke-dasharray="4 3"/>
-                    <!-- Motors -->
-                    <rect x="220" y="150" width="80" height="40" rx="4" fill="#4a6a9a" opacity="0.4"/>
-                    <circle cx="260" cy="170" r="16" fill="#4a6a9a" opacity="0.3"/>
-                    <text x="232" y="165" font-size="9" fill="#1a3a6b">M1</text>
-                    <text x="228" y="178" font-size="8" fill="#667">~3kW</text>
-                    <rect x="360" y="150" width="80" height="40" rx="4" fill="#4a6a9a" opacity="0.4"/>
-                    <circle cx="400" cy="170" r="16" fill="#4a6a9a" opacity="0.3"/>
-                    <text x="372" y="165" font-size="9" fill="#1a3a6b">M2</text>
-                    <text x="368" y="178" font-size="8" fill="#667">~2.2kW</text>
-                    <line x1="260" y1="120" x2="260" y2="150" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <line x1="400" y1="120" x2="400" y2="150" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <!-- Temperature sensor section -->
-                    <rect x="530" y="40" width="200" height="80" rx="6" fill="#fff" stroke="#ff6633" stroke-width="1.5"/>
-                    <rect x="530" y="40" width="200" height="24" rx="6" fill="#e85530"/>
-                    <rect x="530" y="54" width="200" height="10" fill="#e85530"/>
-                    <text x="590" y="57" font-size="10" fill="#fff" font-weight="600">模拟量温度采集</text>
-                    <text x="550" y="80" font-size="10" fill="#555">传感器: PT100 热电阻</text>
-                    <text x="550" y="98" font-size="10" fill="#555">量程: -50 ~ +200 / 4-20mA</text>
-                    <rect x="720" y="40" width="50" height="80" rx="4" fill="#e8f0fe" stroke="#c8d4e3" stroke-width="1"/>
-                    <text x="733" y="65" font-size="18" fill="#ff6633" font-weight="700">&#xB0;C</text>
-                    <text x="742" y="105" font-size="9" fill="#ff6633">温度</text>
-                    <!-- Temperature bar -->
-                    <rect x="780" y="50" width="16" height="60" rx="8" fill="#e8f0fe" stroke="#c8d4e3" stroke-width="1"/>
-                    <rect x="782" y="58" width="12" height="40" rx="6" fill="#ff6633" opacity="0.6"/>
-                    <rect x="780" y="50" width="16" height="60" rx="8" fill="none" stroke="#ff6633" stroke-width="1" opacity="0.5"/>
-                    <line x1="780" y1="62" x2="796" y2="62" stroke="#ff6633" stroke-width="0.5" opacity="0.3"/>
-                    <line x1="780" y1="74" x2="796" y2="74" stroke="#ff6633" stroke-width="0.5" opacity="0.3"/>
-                    <line x1="780" y1="86" x2="796" y2="86" stroke="#ff6633" stroke-width="0.5" opacity="0.3"/>
-                    <text x="800" y="66" font-size="9" fill="#ff6633">68&#xB0;C</text>
-                    <!-- AI module -->
-                    <rect x="530" y="150" width="120" height="40" rx="4" fill="#1a3a6b" opacity="0.8"/>
-                    <text x="540" y="175" font-size="10" fill="#fff">AI 模拟量输入模块</text>
-                    <line x1="590" y1="120" x2="590" y2="150" stroke="#ff6633" stroke-width="1.5"/>
-                    <line x1="140" y1="100" x2="140" y2="170" stroke="#2d7dd2" stroke-width="1.2" stroke-dasharray="3 3"/>
-                    <line x1="140" y1="170" x2="530" y2="170" stroke="#2d7dd2" stroke-width="1.2" stroke-dasharray="3 3"/>
-                    <!-- Alarm indicator -->
-                    <rect x="850" y="50" width="100" height="30" rx="15" fill="#ff4d4d" opacity="0.08"/>
-                    <circle cx="870" cy="65" r="5" fill="#ff4d4d"/>
-                    <text x="880" y="69" font-size="10" fill="#ff4d4d" font-weight="600">超温报警</text>
-                    <!-- Power supply -->
-                    <rect x="850" y="110" width="100" height="30" rx="15" fill="#00cc66" opacity="0.08"/>
-                    <text x="868" y="130" font-size="10" fill="#00aa55" font-weight="600">&#x26A1; 24VDC</text>
-                    <!-- Bottom info bar -->
-                    <rect x="40" y="240" width="1020" height="50" rx="6" fill="#0a2647" opacity="0.04"/>
-                    <text x="60" y="262" font-size="9" fill="#8899aa">控制协议: Modbus RTU / USS | 模拟量输入: 4-20mA | 温度传感器: PT100 | 保护功能: 超温报警、故障复位</text>
-                    <text x="60" y="278" font-size="9" fill="#8899aa">Communication: Modbus RTU/USS | Analog Input: 4-20mA | Temp Sensor: PT100 | Protection: Over-temp alarm, Fault reset</text>
-                </svg>
+            <div class="pdf-grid">
+                <div class="pdf-card">
+                    <div class="pdf-icon">📊</div>
+                    <div class="pdf-card-title">变频器系统图</div>
+                    <div class="pdf-card-desc">S7-1200 通过 Modbus/USS 协议控制两台变频器的系统接线与通信拓扑图。</div>
+                    <a href="pdfs/1200%E6%8E%A7%E5%88%B6%E4%B8%A4%E5%8F%B0%E5%8F%98%E9%A2%91%E5%99%A8%E5%8A%A0%E6%A8%A1%E6%8B%9F%E9%87%8F%E6%B8%A9%E5%BA%A6%E8%BE%93%E5%85%A5.pdf" download class="btn btn-primary btn-sm">📄 下载 PDF</a>
+                </div>
+                <div class="pdf-card">
+                    <div class="pdf-icon">⚡</div>
+                    <div class="pdf-card-title">三相电机D布局图</div>
+                    <div class="pdf-card-desc">三相电机的 D 型标准布局与接线图，包含主回路与保护回路设计。</div>
+                    <a href="pdfs/%E4%B8%89%E7%9B%B8%E7%94%B5%E6%9C%BAD%E5%B8%83%E5%B1%80.pdf" download class="btn btn-outline btn-sm">📄 下载 PDF</a>
+                </div>
             </div>
-            <div class="project-actions">
-                <a href="pdfs/1200%E6%8E%A7%E5%88%B6%E4%B8%A4%E5%8F%B0%E5%8F%98%E9%A2%91%E5%99%A8%E5%8A%A0%E6%A8%A1%E6%8B%9F%E9%87%8F%E6%B8%A9%E5%BA%A6%E8%BE%93%E5%85%A5.pdf" download class="btn btn-primary btn-sm">&#x1F4C4; 变频器系统图 (PDF)</a>
-                <a href="pdfs/%E4%B8%89%E7%9B%B8%E7%94%B5%E6%9C%BAD%E5%B8%83%E5%B1%80.pdf" download class="btn btn-outline btn-sm">&#x1F4C4; 三相电机布局图 (PDF)</a>
-            </div>
+            
+            
         </div>
     </div>
 </section>
@@ -980,93 +717,16 @@
                 <span class="project-tag">伺服驱动</span>
             </div>
             <p class="project-desc">基于 S7-1200 实现两轴步进电机与一轴伺服电机的联动控制。包含脉冲方向信号输出、驱动器参数配置、位置/速度模式切换、原点回归、多轴协调运动及限位保护功能。适用于精密定位与轨迹控制场景。</p>
-            <div class="project-placeholders">
-                <svg class="img-card" viewBox="0 0 1100 340" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="1100" height="340" rx="8" fill="#f0f5ff"/>
-                    <text x="420" y="26" font-size="13" fill="#1a3a6b" font-weight="700">多轴驱动系统 / Multi-Axis Drive System</text>
-                    <rect x="30" y="100" width="100" height="60" rx="6" fill="#0a2647"/>
-                    <text x="48" y="135" font-size="12" fill="#fff" font-weight="600">S7-1200</text>
-                    <text x="55" y="150" font-size="8" fill="#8fc8ff">CPU 1214C</text>
-                    <line x1="130" y1="110" x2="180" y2="90" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <text x="138" y="104" font-size="8" fill="#2d7dd2">PTO1</text>
-                    <line x1="130" y1="130" x2="180" y2="130" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <text x="138" y="124" font-size="8" fill="#2d7dd2">PTO2</text>
-                    <line x1="130" y1="150" x2="180" y2="170" stroke="#ff6633" stroke-width="1.5"/>
-                    <text x="138" y="164" font-size="8" fill="#ff6633">PTO3</text>
-                    <rect x="180" y="56" width="130" height="70" rx="6" fill="#fff" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <rect x="180" y="56" width="130" height="22" rx="6" fill="#2d7dd2"/>
-                    <rect x="180" y="68" width="130" height="10" fill="#2d7dd2"/>
-                    <text x="202" y="71" font-size="10" fill="#fff" font-weight="600">步进驱动器 #1</text>
-                    <text x="190" y="94" font-size="9" fill="#555">脉冲+方向模式</text>
-                    <text x="190" y="112" font-size="9" fill="#555">细分: 16 电流: 2.8A</text>
-                    <rect x="340" y="65" width="46" height="52" rx="4" fill="none" stroke="#3a5a8a" stroke-width="1.5"/>
-                    <line x1="363" y1="75" x2="363" y2="107" stroke="#3a5a8a" stroke-width="0.8"/>
-                    <line x1="350" y1="80" x2="376" y2="80" stroke="#3a5a8a" stroke-width="0.8"/>
-                    <line x1="350" y1="90" x2="376" y2="90" stroke="#3a5a8a" stroke-width="0.8"/>
-                    <line x1="350" y1="100" x2="376" y2="100" stroke="#3a5a8a" stroke-width="0.8"/>
-                    <text x="348" y="130" font-size="9" fill="#1a3a6b" font-weight="600">步进 #1</text>
-                    <line x1="310" y1="91" x2="340" y2="91" stroke="#2d7dd2" stroke-width="2"/>
-                    <rect x="180" y="136" width="130" height="70" rx="6" fill="#fff" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <rect x="180" y="136" width="130" height="22" rx="6" fill="#2d7dd2"/>
-                    <rect x="180" y="148" width="130" height="10" fill="#2d7dd2"/>
-                    <text x="202" y="151" font-size="10" fill="#fff" font-weight="600">步进驱动器 #2</text>
-                    <text x="190" y="174" font-size="9" fill="#555">脉冲+方向模式</text>
-                    <text x="190" y="192" font-size="9" fill="#555">细分: 32 电流: 3.5A</text>
-                    <rect x="340" y="145" width="46" height="52" rx="4" fill="none" stroke="#3a5a8a" stroke-width="1.5"/>
-                    <line x1="363" y1="155" x2="363" y2="187" stroke="#3a5a8a" stroke-width="0.8"/>
-                    <line x1="350" y1="160" x2="376" y2="160" stroke="#3a5a8a" stroke-width="0.8"/>
-                    <line x1="350" y1="170" x2="376" y2="170" stroke="#3a5a8a" stroke-width="0.8"/>
-                    <line x1="350" y1="180" x2="376" y2="180" stroke="#3a5a8a" stroke-width="0.8"/>
-                    <text x="348" y="210" font-size="9" fill="#1a3a6b" font-weight="600">步进 #2</text>
-                    <line x1="310" y1="171" x2="340" y2="171" stroke="#2d7dd2" stroke-width="2"/>
-                    <rect x="460" y="80" width="140" height="80" rx="6" fill="#fff" stroke="#ff6633" stroke-width="1.5"/>
-                    <rect x="460" y="80" width="140" height="22" rx="6" fill="#e85530"/>
-                    <rect x="460" y="92" width="140" height="10" fill="#e85530"/>
-                    <text x="492" y="95" font-size="10" fill="#fff" font-weight="600">伺服驱动器</text>
-                    <text x="470" y="118" font-size="9" fill="#555">位置控制模式</text>
-                    <text x="470" y="136" font-size="9" fill="#555">速度: 3000rpm</text>
-                    <line x1="180" y1="180" x2="460" y2="160" stroke="#ff6633" stroke-width="1.5" stroke-dasharray="4 3"/>
-                    <circle cx="650" cy="120" r="38" fill="none" stroke="#e85530" stroke-width="2"/>
-                    <circle cx="650" cy="120" r="24" fill="none" stroke="#e85530" stroke-width="1"/>
-                    <circle cx="650" cy="120" r="10" fill="#e85530" opacity="0.08"/>
-                    <circle cx="650" cy="120" r="4" fill="#cc4420"/>
-                    <line x1="688" y1="120" x2="720" y2="120" stroke="#cc4420" stroke-width="3"/>
-                    <line x1="718" y1="115" x2="718" y2="125" stroke="#cc4420" stroke-width="1.5"/>
-                    <text x="638" y="170" font-size="9" fill="#e85530" font-weight="600">伺服电机</text>
-                    <line x1="600" y1="120" x2="650" y2="120" stroke="#ff6633" stroke-width="1.5"/>
-                    <line x1="650" y1="82" x2="650" y2="60" stroke="#ff6633" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
-                    <rect x="635" y="48" width="30" height="14" rx="3" fill="#ff6633" opacity="0.08"/>
-                    <text x="638" y="59" font-size="8" fill="#ff6633">编码器</text>
-                    <rect x="460" y="220" width="460" height="50" rx="6" fill="#fff" stroke="#c8d4e3" stroke-width="0.8"/>
-                    <text x="475" y="240" font-size="9" fill="#1a3a6b" font-weight="600">脉冲信号 / Pulse Train</text>
-                    <line x1="480" y1="255" x2="540" y2="255" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <line x1="540" y1="255" x2="540" y2="245" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <line x1="540" y1="245" x2="560" y2="245" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <line x1="560" y1="245" x2="560" y2="255" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <line x1="560" y1="255" x2="580" y2="255" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <line x1="580" y1="255" x2="580" y2="245" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <line x1="580" y1="245" x2="600" y2="245" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <line x1="600" y1="245" x2="600" y2="255" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <line x1="600" y1="255" x2="660" y2="255" stroke="#2d7dd2" stroke-width="1.5"/>
-                    <text x="670" y="255" font-size="9" fill="#2d7dd2">Pulse</text>
-                    <line x1="480" y1="262" x2="660" y2="262" stroke="#ff8800" stroke-width="1" opacity="0.5"/>
-                    <text x="670" y="265" font-size="9" fill="#ff8800">Dir</text>
-                    <rect x="820" y="40" width="250" height="105" rx="6" fill="#fff" stroke="#c8d4e3" stroke-width="0.8"/>
-                    <rect x="820" y="40" width="250" height="20" rx="6" fill="#1a3a6b"/>
-                    <rect x="820" y="50" width="250" height="10" fill="#1a3a6b"/>
-                    <text x="900" y="55" font-size="9" fill="#fff" font-weight="600">控制模式</text>
-                    <line x1="820" y1="60" x2="1070" y2="60" stroke="#c8d4e3" stroke-width="0.5"/>
-                    <text x="835" y="78" font-size="9" fill="#555">X 轴步进 : 脉冲方向 / 位置模式</text>
-                    <text x="835" y="94" font-size="9" fill="#555">Y 轴步进 : 脉冲方向 / 位置模式</text>
-                    <text x="835" y="110" font-size="9" fill="#555">Z 轴伺服 : 模拟量速度 / 位置模式</text>
-                    <text x="835" y="126" font-size="9" fill="#555">原点回归 : 限位开关 + 编码器 Z 信号</text>
-                    <rect x="40" y="290" width="1020" height="36" rx="6" fill="#0a2647" opacity="0.04"/>
-                    <text x="60" y="312" font-size="9" fill="#8899aa">轴数: 3 (2轴步进 + 1轴伺服) | 控制方式: 脉冲方向(PTO) | 反馈: 编码器 | 保护: 限位开关、急停、软件限位</text>
-                </svg>
+            <div class="pdf-grid">
+                <div class="pdf-card">
+                    <div class="pdf-icon">🔧</div>
+                    <div class="pdf-card-title">多轴驱动系统图</div>
+                    <div class="pdf-card-desc">2轴步进 + 1轴伺服的多轴驱动系统接线图，包含脉冲方向信号分配、驱动器配置与限位保护电路。</div>
+                    <a href="pdfs/1200%E6%8E%A7%E5%88%B62%E8%BD%B4%E6%AD%A5%E8%BF%9B+1%E8%BD%B4%E4%BC%BA%E6%9C%8D.pdf" download class="btn btn-primary btn-sm">📄 下载 PDF</a>
+                </div>
             </div>
-            <div class="project-actions">
-                <a href="pdfs/1200%E6%8E%A7%E5%88%B62%E8%BD%B4%E6%AD%A5%E8%BF%9B+1%E8%BD%B4%E4%BC%BA%E6%9C%8D.pdf" download class="btn btn-primary btn-sm">&#x1F4C4; 多轴驱动系统图 (PDF)</a>
-            </div>
+            
+            
         </div>
     </div>
 </section>
@@ -1138,6 +798,12 @@ document.getElementById('modal').addEventListener('click',function(e){if(e.targe
 </script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 
