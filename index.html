@@ -380,6 +380,25 @@
             body{font-size:14px!important}
         }
 
+    
+        /* ===== 移动端/性能优化 ===== */
+        .gpu{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform}
+        *{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
+        .navbar,.project-card,.skill-card,.about-stat-card,.footer{-webkit-transform:translateZ(0);transform:translateZ(0)}
+        .vid-box video{-webkit-transform:translateZ(0);transform:translateZ(0)}
+        @media (hover:none) and (pointer:coarse){
+            .navbar{background:rgba(10,38,71,0.97);-webkit-backdrop-filter:none;backdrop-filter:none}
+            .project-card,.skill-card,.about-stat-card{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(16,24,40,0.75)}
+            .hero-shape{display:none!important}
+            .hero-enhance-svg svg{opacity:0.03!important}
+            .section-divider .section-divider-inner svg{opacity:0.5}
+            .back-to-top{-webkit-backdrop-filter:none;backdrop-filter:none}
+        }
+        @media (max-width:768px){
+            .navbar{-webkit-backdrop-filter:none;backdrop-filter:none}
+            .project-card,.skill-card,.about-stat-card{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(16,24,40,0.78)}
+        }
+
     </style>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -809,6 +828,14 @@ document.getElementById('modal').addEventListener('click',function(e){if(e.targe
         offset: 100,
         disable: false
     });
+    // 移动端触控优化 — 点击反馈
+    document.querySelectorAll('.btn,.skill-card,.about-stat-card,.project-card,.nav-link,.footer-contact-item,.pdf-card').forEach(function(el){
+        el.addEventListener('touchstart',function(){this.style.transform='scale(0.97)';this.style.transition='transform .15s'},{passive:true});
+        el.addEventListener('touchend',function(){this.style.transform=''},{passive:true});
+    });
+    // 优化滚动性能
+    document.querySelectorAll('.vid-box video').forEach(function(v){v.setAttribute('webkit-playsinline','');v.setAttribute('playsinline','')});
+
 </script>
 </body>
 </html>
