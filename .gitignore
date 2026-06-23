@@ -3,3 +3,7 @@
 *.log
 .DS_Store
 Thumbs.db
+videos_compressed/
+
+package.json
+package-lock.json

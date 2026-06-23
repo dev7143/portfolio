@@ -419,9 +419,6 @@
         #bootText{position:relative;z-index:2;color:#6ab0ff;font-size:clamp(16px,4vw,24px);font-weight:700;letter-spacing:4px;text-shadow:0 0 20px rgba(106,176,255,0.3),0 0 60px rgba(106,176,255,0.08);animation:bootPulse .8s ease-in-out infinite alternate;user-select:none}
         @keyframes bootPulse{from{opacity:.7}to{opacity:1}}
         @media (max-width:480px){#bootText{font-size:14px;letter-spacing:2px}}@media (hover:none) and (pointer:coarse){.hero h1 .gradient-text{animation:none!important}}
-
-    
-        .vid-download{display:inline-block;font-size:12px;color:rgba(106,176,255,0.6);padding:4px 10px;margin-top:4px;border-radius:4px;transition:all .3s;font-family:"Courier New",Consolas,monospace;line-height:1.4}
         .vid-download:hover{color:#6ab0ff;background:rgba(106,176,255,0.08)}
     </style>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -604,20 +601,18 @@
             <div class="project-videos">
                 <div class="vid-card">
                     <div class="vid-box">
-                        <video controls preload="none" playsinline x5-video-player-type="h5">
+                        <video controls preload="auto" playsinline x5-video-player-type="h5">
                             <source src="videos/东西南北红绿灯对称模式.mp4" type="video/mp4">
                             </video>
-                            <a href="videos/东西南北红绿灯对称模式.mp4" download class="vid-download">⬇ 下载</a>
                     </div>
                     <div class="vid-label">对称模式 · 东西等时</div>
                     <p class="vid-desc">东西方向与南北方向绿灯时长相同，适用于车流量均衡的十字路口场景。</p>
                 </div>
                 <div class="vid-card">
                     <div class="vid-box">
-                        <video controls preload="none" playsinline x5-video-player-type="h5">
+                        <video controls preload="auto" playsinline x5-video-player-type="h5">
                             <source src="videos/东西南北红绿灯非对称模式.mp4" type="video/mp4">
                             </video>
-                            <a href="videos/东西南北红绿灯非对称模式.mp4" download class="vid-download">⬇ 下载</a>
                     </div>
                     <div class="vid-label">非对称模式 · 主干优先</div>
                     <p class="vid-desc">主干道绿灯时长大于支干道，配合行人过街请求与车辆感应信号，实现动态配时控制。</p>
@@ -646,10 +641,9 @@
             <p class="project-desc">在 Factory IO 仿真环境中搭建传送带 3D 场景，实现物料换向控制。通过 PLC 与 Factory IO 实时联动，编写换向逻辑程序，实现传送带的启动、停止、正反转切换及传感器信号反馈。</p>
             <div class="project-placeholders">
                 <div class="vid-box">
-                    <video controls preload="none" playsinline x5-video-player-type="h5">
+                    <video controls preload="auto" playsinline x5-video-player-type="h5">
                         <source src="videos/换向机械手.mp4" type="video/mp4">
                             </video>
-                            <a href="videos/换向机械手.mp4" download class="vid-download">⬇ 下载</a>
                 </div>
             </div>
             
@@ -678,10 +672,9 @@
                             <div class="project-videos">
                 <div class="vid-card">
                     <div class="vid-box">
-                        <video controls preload="none" playsinline x5-video-player-type="h5">
+                        <video controls preload="auto" playsinline x5-video-player-type="h5">
                             <source src="videos/小车5模式切换.mp4" type="video/mp4">
                             </video>
-                            <a href="videos/小车5模式切换.mp4" download class="vid-download">⬇ 下载</a>
                     </div>
                     <div class="vid-label">5种模式切换演示</div>
                     <p class="vid-desc">展示小车在手动、自动、呼叫、寸动、随动五种模式下的完整切换过程与运动表现。</p>
@@ -689,30 +682,27 @@
                 <div class="sub-videos">
                     <div class="sub-vid">
                         <div class="vid-box">
-                            <video controls preload="none" playsinline x5-video-player-type="h5">
+                            <video controls preload="auto" playsinline x5-video-player-type="h5">
                                 <source src="videos/手自动小车LAD版.mp4" type="video/mp4">
                             </video>
-                            <a href="videos/手自动小车LAD版.mp4" download class="vid-download">⬇ 下载</a>
                         </div>
                         <div class="sub-vid-label">手自动控制 — LAD 梯形图版</div>
                         <p class="sub-vid-desc">使用梯形图（LAD）语言实现的手自动切换控制程序，展示梯形图逻辑的直观性与可靠性。</p>
                     </div>
                     <div class="sub-vid">
                         <div class="vid-box">
-                            <video controls preload="none" playsinline x5-video-player-type="h5">
+                            <video controls preload="auto" playsinline x5-video-player-type="h5">
                                 <source src="videos/手自动小车SCL版.mp4" type="video/mp4">
                             </video>
-                            <a href="videos/手自动小车SCL版.mp4" download class="vid-download">⬇ 下载</a>
                         </div>
                         <div class="sub-vid-label">手自动控制 — SCL 结构化文本版</div>
                         <p class="sub-vid-desc">使用结构化文本（SCL）语言实现的手自动切换控制程序，对比高级语言编程的灵活性与可维护性。</p>
                     </div>
                                     <div class="sub-vid">
                         <div class="vid-box">
-                            <video controls preload="none" playsinline x5-video-player-type="h5">
+                            <video controls preload="auto" playsinline x5-video-player-type="h5">
                                 <source src="videos/小车5模式切换寸动模式.mp4" type="video/mp4">
                             </video>
-                            <a href="videos/小车5模式切换寸动模式.mp4" download class="vid-download">⬇ 下载</a>
                         </div>
                         <div class="sub-vid-label">寸动模式专项演示</div>
                         <p class="sub-vid-desc">展示小车在寸动模式下的点动控制与精确定位操作，适用于调试与微调场景。</p>
