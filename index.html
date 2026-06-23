@@ -409,10 +409,48 @@
         .vid-box.loading::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:2;animation:vidPulse 1.5s ease-in-out infinite;pointer-events:none}
         @keyframes vidPulse{0%,100%{opacity:0.3}50%{opacity:0.6}}
 
+    
+        /* ===== 开屏启动动画 ===== */
+        #bootScreen{position:fixed;inset:0;z-index:99999;background:#05080f;display:flex;align-items:center;justify-content:center;font-family:"Courier New",Consolas,monospace;transition:opacity .6s ease,visibility .6s ease}
+        #bootScreen.fade-out{opacity:0;visibility:hidden;pointer-events:none}
+        #bootInner{text-align:left;max-width:480px;width:88%;padding:20px}
+        #bootLogo{color:#6ab0ff;font-size:clamp(14px,3vw,18px);font-weight:700;letter-spacing:3px;margin-bottom:24px;opacity:0;animation:fadeIn .4s forwards}
+        .boot-line{color:rgba(200,216,232,0.7);font-size:clamp(12px,2.5vw,14px);line-height:2;letter-spacing:.5px;opacity:0;transform:translateY(6px);white-space:nowrap;overflow:hidden}
+        .boot-line.done{color:rgba(120,200,120,0.9)}
+        #bootStatus{font-weight:700;font-size:clamp(13px,2.8vw,16px);margin-top:4px}
+        #bootStatus.done{color:#6bc86b;text-shadow:0 0 12px rgba(107,200,107,0.3)}
+        #bootBar{width:100%;height:3px;background:rgba(106,176,255,0.12);border-radius:2px;margin-top:16px;overflow:hidden;opacity:0;animation:fadeIn .4s .9s forwards}
+        #bootBarFill{height:100%;width:0%;background:linear-gradient(90deg,#2d7dd2,#6ab0ff);border-radius:2px;transition:width .15s linear}
+        #bootSkip{color:rgba(255,255,255,0.15);font-size:11px;text-align:center;margin-top:20px;opacity:0;animation:fadeIn .4s 2s forwards;letter-spacing:1px}
+        @keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+        @media (max-width:480px){
+            #bootInner{padding:12px}
+            #bootLogo{font-size:13px;margin-bottom:16px}
+            .boot-line{font-size:11px;line-height:1.8}
+            #bootBar{margin-top:12px}
+        }
+
     </style>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+
+<!-- ===== 开屏启动动画 ===== -->
+<div id="bootScreen">
+    <div id="bootInner">
+        <div id="bootLogo">[ Siemens S7-1200 ]</div>
+        <div id="bootLine1" class="boot-line">&nbsp;</div>
+        <div id="bootLine2" class="boot-line">&nbsp;</div>
+        <div id="bootLine3" class="boot-line">&nbsp;</div>
+        <div id="bootLine4" class="boot-line">&nbsp;</div>
+        <div id="bootStatus" class="boot-line">&nbsp;</div>
+        <div id="bootBar">
+            <div id="bootBarFill"></div>
+        </div>
+        <div id="bootSkip">点击任意处跳过</div>
+    </div>
+</div>
+
 <div class="scanlines"></div>
 <div class="scroll-progress"><div class="scroll-progress-bar" id="progressBar"></div></div>
 <nav class="navbar" id="navbar">
@@ -809,6 +847,46 @@
     </div>
 </div>
 <script>
+
+    // ===== 开屏启动动画控制 =====
+    (function(){
+        var bs=document.getElementById('bootScreen'),bl1=document.getElementById('bootLine1'),bl2=document.getElementById('bootLine2'),bl3=document.getElementById('bootLine3'),bl4=document.getElementById('bootLine4'),bst=document.getElementById('bootStatus'),bbf=document.getElementById('bootBarFill');
+        var lines=[
+            {el:bl1,t:'> INITIALIZING HARDWARE...',t0:400,d:600},
+            {el:bl2,t:'> LOADING CONFIGURATION...',t0:700,d:600},
+            {el:bl3,t:'> ESTABLISHING COMMS...',t0:1000,d:500},
+            {el:bl4,t:'> RUNNING DIAGNOSTICS...',t0:1300,d:500}
+        ];
+        var done=false;
+        function typeLine(cfg){
+            cfg.el.textContent='';cfg.el.style.opacity='1';cfg.el.style.transform='translateY(0)';
+            var i=0,iv=setInterval(function(){
+                cfg.el.textContent+=cfg.t[i];i++;
+                if(i>=cfg.t.length){clearInterval(iv);cfg.el.classList.add('done');updateBar()}
+            },Math.max(12,Math.floor(cfg.d/cfg.t.length)));
+        }
+        var barTargets=[0,25,55,80,95,100],barIdx=0;
+        function updateBar(){barIdx++;if(barIdx<barTargets.length)bbf.style.width=barTargets[barIdx]+'%'}
+        setTimeout(function(){typeLine(lines[0])},400);
+        setTimeout(function(){typeLine(lines[1])},700);
+        setTimeout(function(){typeLine(lines[2])},1000);
+        setTimeout(function(){typeLine(lines[3])},1300);
+        setTimeout(function(){
+            if(!done){done=true;
+                bst.textContent='>> SYSTEM READY  [ OK ]';bst.classList.add('done');bbf.style.width='100%';
+                setTimeout(function(){bs.classList.add('fade-out')},600);
+            }
+        },1700);
+        function skip(){
+            if(done)return;done=true;
+            lines.forEach(function(l){l.el.textContent=l.t;l.el.style.opacity='1';l.el.style.transform='translateY(0)';l.el.classList.add('done')});
+            bst.textContent='>> SYSTEM READY  [ OK ]';bst.classList.add('done');bbf.style.width='100%';
+            bs.classList.add('fade-out');
+        }
+        bs.addEventListener('click',skip);
+        document.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')skip()});
+    })();
+
 (function(){var b=document.getElementById('progressBar');window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;b.style.width=((d>0?s/d*100:0)+'%')},{passive:true});
 var s=document.querySelectorAll('.section,#hero'),n=document.querySelectorAll('.nav-link'),t=document.getElementById('backToTop');
 function u(){var c='',p=window.scrollY+100;for(var i=0;i<s.length;i++){var e=s[i],T=e.offsetTop,B=T+e.offsetHeight;if(p>=T&&p<B)c=e.id||'hero'}if(!c){var l=s[s.length-1];if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-10)c=l.id||'hero'}for(var j=0;j<n.length;j++){var k=n[j],h=k.getAttribute('href').replace('#','');if(h===c)k.classList.add('active');else k.classList.remove('active')}t.classList.toggle('visible',window.scrollY>400)}
