@@ -828,35 +828,44 @@
     </div>
 </div>
 <script>
+// ===== 开屏动画 =====
+(function(){
+    var bs=document.getElementById('bootScreen');
+    setTimeout(function(){bs.classList.add('fade-out')},1500);
+    bs.addEventListener('click',function(){bs.classList.add('fade-out')});
+    setTimeout(function(){if(!bs.classList.contains('fade-out'))bs.classList.add('fade-out')},3000);
+})();
 
-    // ===== 开屏动画 — 科技网格 + 短促过渡 =====
-    (function(){
-        var bs=document.getElementById('bootScreen');
-        setTimeout(function(){bs.classList.add('fade-out')},1500);
-        bs.addEventListener('click',function(){bs.classList.add('fade-out')});
-        setTimeout(function(){if(!bs.classList.contains('fade-out'))bs.classList.add('fade-out')},3000);
-    })();
+// ===== 页面功能 =====
+// 滚动进度条
+var pb=document.getElementById('progressBar');
+window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=((d>0?s/d*100:0)+'%')},{passive:true});
 
-    // ===== 主页面功能 =====
-    (function(){var b=document.getElementById('progressBar');window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;b.style.width=((d>0?s/d*100:0)+'%')},{passive:true});
-var s=document.querySelectorAll('.section,#hero'),n=document.querySelectorAll('.nav-link'),t=document.getElementById('backToTop');
-function u(){var c='',p=window.scrollY+100;for(var i=0;i<s.length;i++){var e=s[i],T=e.offsetTop,B=T+e.offsetHeight;if(p>=T&&p<B)c=e.id||'hero'}if(!c){var l=s[s.length-1];if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-10)c=l.id||'hero'}for(var j=0;j<n.length;j++){var k=n[j],h=k.getAttribute('href').replace('#','');if(h===c)k.classList.add('active');else k.classList.remove('active')}t.classList.toggle('visible',window.scrollY>400)}
-window.addEventListener('scroll',u,{passive:true});window.addEventListener('load',u);
-for(var i=0;i<n.length;i++)n[i].addEventListener('click',function(e){e.preventDefault();var t=document.getElementById(this.getAttribute('href').slice(1));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})});
+// 导航高亮
+var secs=document.querySelectorAll('.section,#hero'),navs=document.querySelectorAll('.nav-link'),btt=document.getElementById('backToTop');
+function updateNav(){
+    var cur='',off=window.scrollY+100;
+    for(var i=0;i<secs.length;i++){var e=secs[i],T=e.offsetTop,B=T+e.offsetHeight;if(off>=T&&off<B)cur=e.id||'hero'}
+    if(!cur){var l=secs[secs.length-1];if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-10)cur=l.id||'hero'}
+    for(var j=0;j<navs.length;j++){var k=navs[j],h=k.getAttribute('href').replace('#','');k.classList.toggle('active',h===cur)}
+    btt.classList.toggle('visible',window.scrollY>400)
+}
+window.addEventListener('scroll',updateNav,{passive:true});window.addEventListener('load',updateNav);
+for(var i=0;i<navs.length;i++)navs[i].addEventListener('click',function(e){e.preventDefault();var t=document.getElementById(this.getAttribute('href').slice(1));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})});
 
+// 汉堡菜单
+var hb=document.getElementById('hamburger'),ov=document.createElement('div'),ml=document.querySelector('.nav-links').cloneNode(true);
+ov.className='nav-overlay';ml.className='nav-links-mobile';ml.id='navLinksMobile';
+document.body.appendChild(ov);document.body.appendChild(ml);
+function toggleMenu(){hb.classList.toggle('active');ml.classList.toggle('show');ov.classList.toggle('show');document.body.style.overflow=ml.classList.contains('show')?'hidden':''}
+hb.addEventListener('click',toggleMenu);ov.addEventListener('click',toggleMenu);
+ml.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(ml.classList.contains('show'))toggleMenu()})});
 
-    // 移动端汉堡菜单
-    var hb=document.getElementById('hamburger'),ov=document.createElement('div'),ml=document.querySelector('.nav-links').cloneNode(true);
-    ov.className='nav-overlay';ml.className='nav-links-mobile';ml.id='navLinksMobile';
-    document.body.appendChild(ov);document.body.appendChild(ml);
-    function toggleMenu(){hb.classList.toggle('active');ml.classList.toggle('show');ov.classList.toggle('show');document.body.style.overflow=ml.classList.contains('show')?'hidden':''}
-    hb.addEventListener('click',toggleMenu);
-    ov.addEventListener('click',toggleMenu);
-    ml.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(ml.classList.contains('show'))toggleMenu()})});
-
+// 弹窗
 function showModal(p){var m=document.getElementById('modal');m.querySelector('.modal-title').textContent='项目 '+p+' — 图纸文件待上传';m.classList.add('show')}
 function hideModal(){document.getElementById('modal').classList.remove('show')}
-document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)hideModal()});document.addEventListener('keydown',function(e){if(e.key==='Escape')hideModal()});
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)hideModal()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')hideModal()});
 </script>
 <script>
     AOS.init({
