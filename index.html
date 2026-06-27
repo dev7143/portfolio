@@ -441,6 +441,7 @@
         <div class="nav-logo">⚡ 电气自动化工程师 <span>| 作品集</span></div>
         <button class="hamburger" id="hamburger" aria-label="菜单"><span></span><span></span><span></span></button>
         <ul class="nav-links">
+            <li><a href="#project_featured" class="nav-link">重点项目</a></li>
             <li><a href="#project1" class="nav-link">项目一</a></li>
             <li><a href="#project2" class="nav-link">项目二</a></li>
             <li><a href="#project3" class="nav-link">项目三</a></li>
@@ -579,8 +580,55 @@
             </div>
         </div>
     </div>
+</section>
+<section class="featured-section" id="project_featured">
+    <div class="section-inner">
+        <div class="featured-badge">
+            <span class="featured-badge-icon">⭐</span>
+            <span class="featured-badge-text">重点项目 · 最具挑战性</span>
+        </div>
+        <div class="featured-card">
+            <div class="featured-tags">
+                <span class="featured-tag">S7-1200</span>
+                <span class="featured-tag">SCL</span>
+                <span class="featured-tag">人机界面</span>
+                <span class="featured-tag">参数配方</span>
+                <span class="featured-tag">精密控制</span>
+            </div>
+            <h2 class="featured-title">用户可编程冲压机床</h2>
+            <p class="featured-desc">开发一套用户可编程的冲压机床控制系统，支持多工序参数自定义配置、模具配方管理与一键切换。系统包含手动调试、半自动运行、全自动循环三种工作模式，配备完善的安全互锁逻辑与故障诊断功能。<br><br>操作员可通过 HMI 界面自由编辑冲压参数（行程、速度、保压时间、延迟时序等），无需修改 PLC 程序即可适应不同工件加工需求，真正实现"现场可编程"的柔性制造理念。</p>
+            
+            <div class="featured-video-wrap">
+                <video controls preload="none" playsinline>
+                    <source src="videos/用户可编程冲压机床.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <div class="featured-details">
+                <div class="featured-detail-card">
+                    <div class="featured-detail-icon">⚙️</div>
+                    <div class="featured-detail-title">工作模式</div>
+                    <div class="featured-detail-val">手动 · 半自动 · 全自动</div>
+                </div>
+                <div class="featured-detail-card">
+                    <div class="featured-detail-icon">📋</div>
+                    <div class="featured-detail-title">配方管理</div>
+                    <div class="featured-detail-val">多组模具参数 · 一键切换</div>
+                </div>
+                <div class="featured-detail-card">
+                    <div class="featured-detail-icon">🛡️</div>
+                    <div class="featured-detail-title">安全保护</div>
+                    <div class="featured-detail-val">光幕 · 双手启动 · 急停 · 超程保护</div>
+                </div>
+            </div>
+            
+            <div class="featured-highlight">
+                <div class="featured-highlight-title">💡 项目亮点</div>
+                <p>用户无需具备 PLC 编程知识即可通过 HMI 界面对冲压参数进行实时调整与保存，大幅缩短换模调机时间。采用模块化编程架构，控制逻辑清晰可维护，为后续功能扩展预留接口。本项目涵盖了从需求分析、硬件选型、电气图纸设计、PLC 程序设计到 HMI 界面开发的完整自动化工程流程。</p>
+            </div>
+        </div>
+    </div>
 </section>
-
 <section class="section" id="project1">
     <div class="section-inner">
         <div class="section-header">
@@ -894,6 +942,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')hideModal()}
 </script>
 </body>
 </html>
+
+
 
 
 
