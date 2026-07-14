@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Cache-Control" content="public, max-age=86400, immutable">
     <title>电气自动化工程师 | 作品集</title>
+        <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth}
@@ -508,9 +508,17 @@
         @keyframes bootPulse{from{opacity:.7}to{opacity:1}}
         @media (max-width:480px){#bootText{font-size:14px;letter-spacing:2px}}@media (hover:none) and (pointer:coarse){.hero h1 .gradient-text{animation:none!important}}
         .vid-download:hover{color:#6ab0ff;background:rgba(106,176,255,0.08)}
-    </style>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+/* ===== 性能优化：内容可见性 ===== */
+.section{content-visibility:auto;contain-intrinsic-size:1px 500px}
+#hero,#skills,#project0,#project1,#project2,#project3,#project4{content-visibility:auto;contain-intrinsic-size:1px 500px}
+.hero{content-visibility:visible}
+footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+
+</style>
+    
+    
 
 </head>
 <body>
@@ -688,7 +696,7 @@
             <p class="featured-desc">开发一套用户可编程的冲压机床控制系统，支持多工序参数自定义配置、模具配方管理与一键切换。系统包含手动调试、半自动运行、全自动循环三种工作模式，配备完善的安全互锁逻辑与故障诊断功能。<br><br>操作员可通过 HMI 界面自由编辑冲压参数（行程、速度、保压时间、延迟时序等），无需修改 PLC 程序即可适应不同工件加工需求，真正实现"现场可编程"的柔性制造理念。</p>
             
             <div class="featured-video-wrap">
-                <video controls preload="auto" playsinline x5-video-player-type="h5" style="max-height:520px;width:100%;position:relative;z-index:1">
+                <video controls preload="none" playsinline x5-video-player-type="h5" style="max-height:520px;width:100%;position:relative;z-index:1" poster="videos/posters/小车5模式切换.jpg">
                     <source src="videos/用户可编程冲压机床.mp4" type="video/mp4">
                 </video>
             </div>
@@ -738,7 +746,7 @@
             <div class="project-videos">
                 <div class="vid-card">
                     <div class="vid-box">
-                        <video controls preload="auto" playsinline x5-video-player-type="h5">
+                        <video controls preload="none" playsinline x5-video-player-type="h5" poster="videos/posters/东西南北红绿灯对称模式.jpg">
                             <source src="videos/东西南北红绿灯对称模式.mp4" type="video/mp4">
                             </video>
                     </div>
@@ -747,7 +755,7 @@
                 </div>
                 <div class="vid-card">
                     <div class="vid-box">
-                        <video controls preload="auto" playsinline x5-video-player-type="h5">
+                        <video controls preload="none" playsinline x5-video-player-type="h5" poster="videos/posters/东西南北红绿灯非对称模式.jpg">
                             <source src="videos/东西南北红绿灯非对称模式.mp4" type="video/mp4">
                             </video>
                     </div>
@@ -780,7 +788,7 @@
             <div class="project-videos">
                 <div class="vid-card">
                     <div class="vid-box">
-                        <video controls preload="auto" playsinline x5-video-player-type="h5">
+                        <video controls preload="none" playsinline x5-video-player-type="h5" poster="videos/posters/换向机械手.jpg">
                             <source src="videos/换向机械手.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -836,7 +844,7 @@
                             <div class="project-videos">
                 <div class="vid-card">
                     <div class="vid-box">
-                        <video controls preload="auto" playsinline x5-video-player-type="h5">
+                        <video controls preload="none" playsinline x5-video-player-type="h5" poster="videos/posters/小车5模式切换.jpg">
                             <source src="videos/小车5模式切换.mp4" type="video/mp4">
                             </video>
                     </div>
@@ -867,7 +875,7 @@
             <div class="sub-videos">
                     <div class="sub-vid">
                         <div class="vid-box">
-                            <video controls preload="auto" playsinline x5-video-player-type="h5">
+                            <video controls preload="none" playsinline x5-video-player-type="h5" poster="videos/posters/手自动小车LAD版.jpg">
                                 <source src="videos/手自动小车LAD版.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -876,7 +884,7 @@
                     </div>
                     <div class="sub-vid">
                         <div class="vid-box">
-                            <video controls preload="auto" playsinline x5-video-player-type="h5">
+                            <video controls preload="none" playsinline x5-video-player-type="h5" poster="videos/posters/手自动小车SCL版.jpg">
                                 <source src="videos/手自动小车SCL版.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -885,7 +893,7 @@
                     </div>
                                     <div class="sub-vid">
                         <div class="vid-box">
-                            <video controls preload="auto" playsinline x5-video-player-type="h5">
+                            <video controls preload="none" playsinline x5-video-player-type="h5" poster="videos/posters/小车5模式切换寸动模式.jpg">
                                 <source src="videos/小车5模式切换寸动模式.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -1017,24 +1025,28 @@
 // ===== 开屏动画 =====
 (function(){
     var bs=document.getElementById('bootScreen');
-    setTimeout(function(){bs.classList.add('fade-out')},1500);
+    setTimeout(function(){bs.classList.add('fade-out')},800);
     bs.addEventListener('click',function(){bs.classList.add('fade-out')});
-    setTimeout(function(){if(!bs.classList.contains('fade-out'))bs.classList.add('fade-out')},3000);
+    setTimeout(function(){if(!bs.classList.contains('fade-out'))bs.classList.add('fade-out')},1600);
 })();
 
 // ===== 页面功能 =====
 // 滚动进度条
 var pb=document.getElementById('progressBar');
-window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=((d>0?s/d*100:0)+'%')},{passive:true});
+var progTicking=false;
+window.addEventListener('scroll',function(){if(!progTicking){requestAnimationFrame(function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=((d>0?s/d*100:0)+'%');progTicking=false});progTicking=true}},{passive:true});
 
 // 导航高亮
 var secs=document.querySelectorAll('.section,#hero'),navs=document.querySelectorAll('.nav-link'),btt=document.getElementById('backToTop');
+var scrollTicking=false;
 function updateNav(){
+    if(!scrollTicking){requestAnimationFrame(function(){
     var cur='',off=window.scrollY+100;
     for(var i=0;i<secs.length;i++){var e=secs[i],T=e.offsetTop,B=T+e.offsetHeight;if(off>=T&&off<B)cur=e.id||'hero'}
     if(!cur){var l=secs[secs.length-1];if(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-10)cur=l.id||'hero'}
     for(var j=0;j<navs.length;j++){var k=navs[j],h=k.getAttribute('href').replace('#','');k.classList.toggle('active',h===cur)}
-    btt.classList.toggle('visible',window.scrollY>400)
+    btt.classList.toggle('visible',window.scrollY>400);scrollTicking=false
+    });scrollTicking=true}
 }
 window.addEventListener('scroll',updateNav,{passive:true});window.addEventListener('load',updateNav);
 for(var i=0;i<navs.length;i++)navs[i].addEventListener('click',function(e){e.preventDefault();var t=document.getElementById(this.getAttribute('href').slice(1));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})});
@@ -1053,14 +1065,10 @@ function hideModal(){document.getElementById('modal').classList.remove('show')}
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)hideModal()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')hideModal()});
 </script>
+
 <script>
-    AOS.init({
-        duration: 900,
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 100,
-        disable: false
-    });
+
+
     // 移动端触控优化 — 点击反馈
     document.querySelectorAll('.btn,.skill-card,.about-stat-card,.project-card,.nav-link,.footer-contact-item,.pdf-card').forEach(function(el){
         el.addEventListener('touchstart',function(){this.style.transform='scale(0.97)';this.style.transition='transform .15s'},{passive:true});
@@ -1076,6 +1084,35 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')hideModal()}
     // 优化滚动性能
     document.querySelectorAll('.vid-box video').forEach(function(v){v.setAttribute('webkit-playsinline','');v.setAttribute('playsinline','')});
 
+// ===== 视频懒加载 (IntersectionObserver) =====
+(function(){
+    if('IntersectionObserver' in window){
+        var obs=new IntersectionObserver(function(entries){
+            entries.forEach(function(e){
+                if(e.isIntersecting){
+                    var v=e.target;
+                    v.preload='auto';
+                    v.load();
+                    obs.unobserve(v);
+                }
+            });
+        },{rootMargin:'400px 0px'});
+        document.querySelectorAll('video[preload="none"]').forEach(function(v){obs.observe(v)});
+    }
+})();
+</script>
+
+<script>
+// AOS 条件加载：仅桌面端加载动画库
+if(window.innerWidth>=768){
+  var l=document.createElement("link");
+  l.rel="stylesheet";l.href="https://unpkg.com/aos@2.3.1/dist/aos.css";
+  document.head.appendChild(l);
+  var s=document.createElement("script");
+  s.src="https://unpkg.com/aos@2.3.1/dist/aos.js";
+  s.onload=function(){AOS.init({disable:false,duration:900,easing:"ease-out-cubic",once:true,offset:100})};
+  document.body.appendChild(s);
+}
 </script>
 </body>
 </html>
