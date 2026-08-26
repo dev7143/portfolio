@@ -504,7 +504,7 @@
     
 /* ===== 性能优化：内容可见性 ===== */
 .section{content-visibility:auto;contain-intrinsic-size:1px 500px}
-#hero,#skills,#project0,#project1,#project2,#project3,#project4{content-visibility:auto;contain-intrinsic-size:1px 500px}
+#hero,#skills,#project_sort,#project_assemble,#project2,#project3,#project_stack,#project5,#project6{content-visibility:auto;contain-intrinsic-size:1px 500px}
 .hero{content-visibility:visible}
 footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
 @media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
@@ -552,12 +552,13 @@ footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
         <button class="hamburger" id="hamburger" aria-label="菜单"><span></span><span></span><span></span></button>
         <ul class="nav-links">
             <li><a href="#project_featured32" class="nav-link">重点项目</a></li>
-            <li><a href="#project1" class="nav-link">项目一</a></li>
-            <li><a href="#project2" class="nav-link">项目二</a></li>
-            <li><a href="#project3" class="nav-link">项目三</a></li>
-            <li><a href="#project4" class="nav-link">项目四</a></li>
-            <li><a href="#project5" class="nav-link">项目五</a></li>
-            <li><a href="#project6" class="nav-link">项目六</a></li>
+            <li><a href="#project_sort" class="nav-link">项目一</a></li>
+            <li><a href="#project_assemble" class="nav-link">项目二</a></li>
+            <li><a href="#project2" class="nav-link">项目三</a></li>
+            <li><a href="#project3" class="nav-link">项目四</a></li>
+            <li><a href="#project_stack" class="nav-link">项目五</a></li>
+            <li><a href="#project5" class="nav-link">项目六</a></li>
+            <li><a href="#project6" class="nav-link">项目七</a></li>
             <li><a href="#contact" class="nav-link">联系方式</a></li>
         </ul>
     </div>
@@ -691,7 +692,7 @@ footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
             </div>
         </div>
     </div>
-</section>
+</section>
 <section class="featured-section" id="project_featured32">
     <div class="section-inner">
         <div class="featured-badge">
@@ -840,66 +841,14 @@ footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
         </div>
     </div>
 </section>
-<section class="section section-alt" id="project_stack">
-    <div class="section-inner">
-        <div class="section-header">
-            <p class="section-label">Project 02</p>
-            <h2 class="section-title"><span class="num">02</span> 双物料互堆控制（Factory IO 仿真）</h2>
-        </div>
-        <div class="project-card reveal" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-            <span class="project-card-number">02</span>
-            <div class="project-deco">
-                <svg viewBox="0 0 120 80"><line x1="8" y1="60" x2="112" y2="60" stroke="#2d7dd2" stroke-width="2"/><rect x="26" y="40" width="16" height="20" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><rect x="26" y="28" width="16" height="14" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none" opacity="0.7"/><rect x="66" y="40" width="16" height="20" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><rect x="66" y="28" width="16" height="14" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none" opacity="0.7"/><line x1="12" y1="26" x2="44" y2="26" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/><line x1="52" y1="26" x2="108" y2="26" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/></svg>
-            </div>
-            <div class="project-tags">
-                <span class="project-tag">Factory IO</span>
-                <span class="project-tag">S7-1200</span>
-                <span class="project-tag">码垛联动</span>
-            </div>
-            <p class="project-desc">两种物料在传送带上定位与互堆码垛，通过 PLC 编写顺序控制程序并结合 HMI 启停、复位功能，完成双物料的联动堆叠与状态监控。</p>
-            <div class="project-videos">
-                <div class="vid-card">
-                    <div class="vid-box">
-                        <video controls preload="metadata" playsinline x5-video-player-type="h5" poster="videos/posters/双物料互堆.jpg">
-                            <source src="videos/双物料互堆.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="vid-label">双物料互堆控制演示</div>
-                    <p class="vid-desc">展示两种物料在传送带上定位并自动互堆码垛的完整控制流程。</p>
-                </div>
-            </div>
-            <div class="project-detail-grid">
-                <div class="project-detail-card">
-                    <div class="project-detail-icon">📦</div>
-                    <div class="project-detail-title">物料规格</div>
-                    <div class="project-detail-val">2 种规格</div>
-                </div>
-                <div class="project-detail-card">
-                    <div class="project-detail-icon">🎛️</div>
-                    <div class="project-detail-title">HMI 操作</div>
-                    <div class="project-detail-val">启动 · 停止 · 复位</div>
-                </div>
-                <div class="project-detail-card">
-                    <div class="project-detail-icon">🔗</div>
-                    <div class="project-detail-title">平台</div>
-                    <div class="project-detail-val">Factory IO 3D</div>
-                </div>
-            </div>
-            <div class="project-keypoints">
-                <div class="project-keypoints-title">💡 设计要点</div>
-                <p>融合传送带定位与物料互堆逻辑，实现双物料自动堆叠；HMI 提供启动/停止/复位操作，状态实时反馈，便于调试与现场控制。</p>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="section" id="project_assemble">
     <div class="section-inner">
         <div class="section-header">
-            <p class="section-label">Project 03</p>
-            <h2 class="section-title"><span class="num">03</span> 装配机械手系统（Factory IO 仿真）</h2>
+            <p class="section-label">Project 02</p>
+            <h2 class="section-title"><span class="num">02</span> 装配机械手系统（Factory IO 仿真）</h2>
         </div>
         <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
-            <span class="project-card-number">03</span>
+            <span class="project-card-number">02</span>
             <div class="project-deco">
                 <svg viewBox="0 0 120 80"><line x1="10" y1="58" x2="110" y2="58" stroke="#2d7dd2" stroke-width="2"/><rect x="30" y="46" width="24" height="12" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><path d="M64 30 L80 18 L96 30" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><circle cx="64" cy="30" r="3" fill="#2d7dd2"/><circle cx="96" cy="30" r="3" fill="#2d7dd2" opacity="0.5"/><rect x="60" y="30" width="40" height="4" rx="2" fill="#2d7dd2" opacity="0.5"/><circle cx="80" cy="46" r="6" stroke="#2d7dd2" stroke-width="1.5" fill="none"/></svg>
             </div>
@@ -944,55 +893,14 @@ footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
         </div>
     </div>
 </section>
-<section class="section" id="project1">
-    <div class="section-inner">
-        <div class="section-header">
-            <p class="section-label">Project 04</p>
-            <h2 class="section-title"><span class="num">04</span> 十字路口红绿灯控制</h2>
-        </div>
-        <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
-            <span class="project-card-number">04</span>
-            <div class="project-deco">
-                <svg viewBox="0 0 120 80"><rect x="52" y="4" width="16" height="72" rx="8" stroke="#2d7dd2" stroke-width="2" fill="none"/><rect x="56" y="8" width="8" height="64" rx="4" fill="#2d7dd2" opacity="0.15"/><circle cx="60" cy="22" r="7" stroke="#2d7dd2" stroke-width="1.8" fill="none"/><circle cx="60" cy="40" r="7" stroke="#2d7dd2" stroke-width="1.8" fill="none"/><circle cx="60" cy="58" r="7" stroke="#2d7dd2" stroke-width="1.8" fill="none"/><circle cx="60" cy="22" r="4" fill="#2d7dd2" opacity="0.3"/><line x1="14" y1="22" x2="48" y2="22" stroke="#2d7dd2" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4"/><line x1="72" y1="22" x2="106" y2="22" stroke="#2d7dd2" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4"/><line x1="14" y1="58" x2="48" y2="58" stroke="#2d7dd2" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4"/><line x1="72" y1="58" x2="106" y2="58" stroke="#2d7dd2" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4"/></svg>
-            </div>
-            <div class="project-tags">
-                <span class="project-tag">S7-1200</span>
-                <span class="project-tag">SCL</span>
-                <span class="project-tag">IO 分配</span>
-            </div>
-            <p class="project-desc">设计十字路口信号灯时序逻辑，包含主干道与支干道红绿灯协调控制、行人过街请求处理、紧急车辆优先通行等功能。完成完整的 IO 分配表，使用 SCL 语言编写控制程序，实现精准的时序切换与故障安全保护。</p>
-            <div class="project-videos">
-                <div class="vid-card">
-                    <div class="vid-box">
-                        <video controls preload="metadata" playsinline x5-video-player-type="h5" poster="videos/posters/东西南北红绿灯对称模式.jpg">
-                            <source src="videos/东西南北红绿灯对称模式.mp4" type="video/mp4">
-                            </video>
-                    </div>
-                    <div class="vid-label">对称模式 · 东西等时</div>
-                    <p class="vid-desc">东西方向与南北方向绿灯时长相同，适用于车流量均衡的十字路口场景。</p>
-                </div>
-                <div class="vid-card">
-                    <div class="vid-box">
-                        <video controls preload="metadata" playsinline x5-video-player-type="h5" poster="videos/posters/东西南北红绿灯非对称模式.jpg">
-                            <source src="videos/东西南北红绿灯非对称模式.mp4" type="video/mp4">
-                            </video>
-                    </div>
-                    <div class="vid-label">非对称模式 · 主干优先</div>
-                    <p class="vid-desc">主干道绿灯时长大于支干道，配合行人过街请求与车辆感应信号，实现动态配时控制。</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
 <section class="section section-alt" id="project2">
     <div class="section-inner">
         <div class="section-header">
-            <p class="section-label">Project 05</p>
-            <h2 class="section-title"><span class="num">05</span> 换向机械手控制（Factory IO 仿真）</h2>
+            <p class="section-label">Project 03</p>
+            <h2 class="section-title"><span class="num">03</span> 换向机械手控制（Factory IO 仿真）</h2>
         </div>
         <div class="project-card reveal" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-            <span class="project-card-number">05</span>
+            <span class="project-card-number">03</span>
             <div class="project-deco">
                 <svg viewBox="0 0 120 80"><line x1="8" y1="60" x2="112" y2="60" stroke="#2d7dd2" stroke-width="2"/><line x1="8" y1="48" x2="112" y2="48" stroke="#2d7dd2" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/><rect x="24" y="44" width="12" height="20" rx="6" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><rect x="54" y="44" width="12" height="20" rx="6" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><rect x="84" y="44" width="12" height="20" rx="6" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><circle cx="30" cy="54" r="3" fill="#2d7dd2" opacity="0.2"/><circle cx="60" cy="54" r="3" fill="#2d7dd2" opacity="0.2"/><circle cx="90" cy="54" r="3" fill="#2d7dd2" opacity="0.2"/><path d="M96 16 L104 24 L96 32" stroke="#2d7dd2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/><line x1="96" y1="24" x2="80" y2="24" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/></svg>
             </div>
@@ -1043,11 +951,11 @@ footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
 <section class="section" id="project3">
     <div class="section-inner">
         <div class="section-header">
-            <p class="section-label">Project 06</p>
-            <h2 class="section-title"><span class="num">06</span> 多模式复合型送料小车（5 种模式）</h2>
+            <p class="section-label">Project 04</p>
+            <h2 class="section-title"><span class="num">04</span> 多模式复合型送料小车（5 种模式）</h2>
         </div>
         <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
-            <span class="project-card-number">06</span>
+            <span class="project-card-number">04</span>
             <div class="project-deco">
                 <svg viewBox="0 0 120 80"><line x1="4" y1="66" x2="116" y2="66" stroke="#2d7dd2" stroke-width="2" opacity="0.3"/><line x1="4" y1="66" x2="14" y2="58" stroke="#2d7dd2" stroke-width="1.5" opacity="0.3"/><line x1="116" y1="66" x2="106" y2="58" stroke="#2d7dd2" stroke-width="1.5" opacity="0.3"/><rect x="28" y="30" width="64" height="28" rx="6" stroke="#2d7dd2" stroke-width="1.8" fill="none"/><rect x="28" y="30" width="64" height="28" rx="6" fill="#2d7dd2" opacity="0.06"/><rect x="38" y="36" width="18" height="12" rx="2" stroke="#2d7dd2" stroke-width="1.2" opacity="0.4" fill="none"/><rect x="64" y="36" width="18" height="12" rx="2" stroke="#2d7dd2" stroke-width="1.2" opacity="0.4" fill="none"/><circle cx="38" cy="66" r="7" stroke="#2d7dd2" stroke-width="1.8" fill="none"/><circle cx="38" cy="66" r="3" fill="#2d7dd2" opacity="0.2"/><circle cx="82" cy="66" r="7" stroke="#2d7dd2" stroke-width="1.8" fill="none"/><circle cx="82" cy="66" r="3" fill="#2d7dd2" opacity="0.2"/><line x1="70" y1="16" x2="70" y2="28" stroke="#2d7dd2" stroke-width="1.5" opacity="0.3"/><circle cx="70" cy="14" r="4" stroke="#2d7dd2" stroke-width="1.2" opacity="0.3" fill="none"/></svg>
             </div>
@@ -1118,70 +1026,74 @@ footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
 
     </div>
 </section>
-<section class="section" id="project4">
+<section class="section section-alt" id="project_more">
     <div class="section-inner">
         <div class="section-header">
-            <p class="section-label">趣味编程练习</p>
-            <h2 class="section-title"><span class="num">★</span> 灰太狼捉小羊游戏（趣味练手）</h2>
+            <p class="section-label">More Demos</p>
+            <h2 class="section-title"><span class="num">&#x25B6;</span> 更多演示</h2>
         </div>
-        <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
-            <span class="project-card-number">★</span>
+    </div>
+</section>
+<section class="section section-alt" id="project_stack">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-label">Project 05</p>
+            <h2 class="section-title"><span class="num">05</span> 双物料互堆控制（Factory IO 仿真）</h2>
+        </div>
+        <div class="project-card reveal" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
+            <span class="project-card-number">05</span>
             <div class="project-deco">
-                <svg viewBox="0 0 120 80"><circle cx="40" cy="40" r="20" stroke="#2d7dd2" stroke-width="1.5" fill="none" opacity="0.3"/><circle cx="40" cy="40" r="12" stroke="#2d7dd2" stroke-width="1" fill="none" opacity="0.5"/><polygon points="80,25 95,40 80,55 65,40" stroke="#2d7dd2" stroke-width="1.5" fill="none" opacity="0.3"/><line x1="52" y1="40" x2="65" y2="40" stroke="#2d7dd2" stroke-width="1" opacity="0.2"/></svg>
+                <svg viewBox="0 0 120 80"><line x1="8" y1="60" x2="112" y2="60" stroke="#2d7dd2" stroke-width="2"/><rect x="26" y="40" width="16" height="20" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><rect x="26" y="28" width="16" height="14" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none" opacity="0.7"/><rect x="66" y="40" width="16" height="20" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><rect x="66" y="28" width="16" height="14" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none" opacity="0.7"/><line x1="12" y1="26" x2="44" y2="26" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/><line x1="52" y1="26" x2="108" y2="26" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/></svg>
             </div>
             <div class="project-tags">
+                <span class="project-tag">Factory IO</span>
                 <span class="project-tag">S7-1200</span>
-                <span class="project-tag">游戏逻辑</span>
-                <span class="project-tag">SCL</span>
-                <span class="project-tag">趣味编程</span>
+                <span class="project-tag">码垛联动</span>
             </div>
-            <p class="project-desc">基于 S7-1200 PLC 开发的"灰太狼捉小羊"趣味互动游戏。通过 PLC 逻辑控制实现角色移动、碰撞检测、得分统计等游戏机制，将工业控制编程思维应用于娱乐场景，展示 PLC 编程的灵活性与创造力。</p>
-            <div class="project-placeholders">
-                <div class="project-videos">
-                    <div class="vid-card">
-                        <div class="vid-box">
-                            <video controls preload="metadata" playsinline x5-video-player-type="h5" poster="videos/posters/灰太狼捉小羊游戏.jpg">
-                                <source src="videos/灰太狼捉小羊游戏.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="vid-label">灰太狼捉小羊 — 游戏演示</div>
-                        <p class="vid-desc">展示灰太狼捉小羊游戏的完整运行过程，包含角色移动、追逐逻辑、得分判定等功能。</p>
+            <p class="project-desc">两种物料在传送带上定位与互堆码垛，通过 PLC 编写顺序控制程序并结合 HMI 启停、复位功能，完成双物料的联动堆叠与状态监控。</p>
+            <div class="project-videos">
+                <div class="vid-card">
+                    <div class="vid-box">
+                        <video controls preload="metadata" playsinline x5-video-player-type="h5" poster="videos/posters/双物料互堆.jpg">
+                            <source src="videos/双物料互堆.mp4" type="video/mp4">
+                        </video>
                     </div>
-                </div>
-                <div class="project-detail-grid">
-                    <div class="project-detail-card">
-                        <div class="project-detail-icon">🎮</div>
-                        <div class="project-detail-title">项目类型</div>
-                        <div class="project-detail-val">PLC 趣味游戏</div>
-                    </div>
-                    <div class="project-detail-card">
-                        <div class="project-detail-icon">🧠</div>
-                        <div class="project-detail-title">编程语言</div>
-                        <div class="project-detail-val">SCL / LAD</div>
-                    </div>
-                    <div class="project-detail-card">
-                        <div class="project-detail-icon">🎯</div>
-                        <div class="project-detail-title">核心逻辑</div>
-                        <div class="project-detail-val">碰撞检测 · 计分系统</div>
-                    </div>
-                </div>
-                <div class="project-keypoints">
-                    <div class="project-keypoints-title">💡 设计要点</div>
-                    <p>将传统工业 PLC 编程应用于趣味游戏场景，展示梯形图和结构化文本在非工业领域的灵活运用。通过角色移动算法和碰撞检测逻辑锻炼编程思维，体现 PLC 作为通用控制器的广泛适用性。</p>
+                    <div class="vid-label">双物料互堆控制演示</div>
+                    <p class="vid-desc">展示两种物料在传送带上定位并自动互堆码垛的完整控制流程。</p>
                 </div>
             </div>
-            
+            <div class="project-detail-grid">
+                <div class="project-detail-card">
+                    <div class="project-detail-icon">📦</div>
+                    <div class="project-detail-title">物料规格</div>
+                    <div class="project-detail-val">2 种规格</div>
+                </div>
+                <div class="project-detail-card">
+                    <div class="project-detail-icon">🎛️</div>
+                    <div class="project-detail-title">HMI 操作</div>
+                    <div class="project-detail-val">启动 · 停止 · 复位</div>
+                </div>
+                <div class="project-detail-card">
+                    <div class="project-detail-icon">🔗</div>
+                    <div class="project-detail-title">平台</div>
+                    <div class="project-detail-val">Factory IO 3D</div>
+                </div>
+            </div>
+            <div class="project-keypoints">
+                <div class="project-keypoints-title">💡 设计要点</div>
+                <p>融合传送带定位与物料互堆逻辑，实现双物料自动堆叠；HMI 提供启动/停止/复位操作，状态实时反馈，便于调试与现场控制。</p>
+            </div>
         </div>
     </div>
 </section>
 <section class="section section-alt" id="project5">
     <div class="section-inner">
         <div class="section-header">
-            <p class="section-label">Project 07</p>
-            <h2 class="section-title"><span class="num">07</span> 1200 控制两台变频器 + 模拟量温度输入</h2>
+            <p class="section-label">Project 06</p>
+            <h2 class="section-title"><span class="num">06</span> 1200 控制两台变频器 + 模拟量温度输入</h2>
         </div>
         <div class="project-card reveal" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-            <span class="project-card-number">07</span>
+            <span class="project-card-number">06</span>
             <div class="project-deco">
                 <svg viewBox="0 0 120 80"><rect x="10" y="10" width="40" height="60" rx="4" stroke="#2d7dd2" stroke-width="1.8" fill="none"/><rect x="10" y="10" width="40" height="60" rx="4" fill="#2d7dd2" opacity="0.04"/><rect x="16" y="16" width="28" height="10" rx="2" stroke="#2d7dd2" stroke-width="1.2" opacity="0.4" fill="none"/><line x1="16" y1="34" x2="44" y2="34" stroke="#2d7dd2" stroke-width="1.2" opacity="0.3"/><line x1="16" y1="42" x2="44" y2="42" stroke="#2d7dd2" stroke-width="1.2" opacity="0.3"/><line x1="16" y1="50" x2="44" y2="50" stroke="#2d7dd2" stroke-width="1.2" opacity="0.3"/><rect x="70" y="10" width="8" height="56" rx="4" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><rect x="70" y="10" width="8" height="56" rx="4" fill="#2d7dd2" opacity="0.08"/><rect x="90" y="10" width="8" height="56" rx="4" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><rect x="90" y="10" width="8" height="56" rx="4" fill="#2d7dd2" opacity="0.08"/><path d="M66 36 L74 36" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/><path d="M86 36 L94 36" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/><line x1="54" y1="40" x2="66" y2="40" stroke="#2d7dd2" stroke-width="1" stroke-dasharray="2 2" opacity="0.3"/><line x1="82" y1="40" x2="86" y2="40" stroke="#2d7dd2" stroke-width="1" stroke-dasharray="2 2" opacity="0.3"/><circle cx="110" cy="38" r="5" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><line x1="114" y1="38" x2="120" y2="38" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/><line x1="108" y1="28" x2="108" y2="32" stroke="#2d7dd2" stroke-width="1.2" opacity="0.4"/><line x1="108" y1="44" x2="108" y2="48" stroke="#2d7dd2" stroke-width="1.2" opacity="0.4"/></svg>
             </div>
@@ -1210,26 +1122,14 @@ footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
         </div>
     </div>
 </section>
-<div class="section-divider section-divider-alt">
-    <div class="section-divider-inner">
-        <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="20" x2="60" y2="20" stroke="#2d7dd2" stroke-width="1" stroke-dasharray="4 4"/>
-            <rect x="78" y="15" width="8" height="10" rx="1" fill="#2d7dd2" opacity="0.2"/>
-            <rect x="92" y="12" width="16" height="16" rx="2" fill="#2d7dd2" opacity="0.1"/>
-            <rect x="94" y="14" width="12" height="12" rx="1" fill="#2d7dd2" opacity="0.25"/>
-            <rect x="114" y="15" width="8" height="10" rx="1" fill="#2d7dd2" opacity="0.2"/>
-            <line x1="140" y1="20" x2="200" y2="20" stroke="#2d7dd2" stroke-width="1" stroke-dasharray="4 4"/>
-        </svg>
-    </div>
-</div>
 <section class="section" id="project6">
     <div class="section-inner">
         <div class="section-header">
-            <p class="section-label">Project 08</p>
-            <h2 class="section-title"><span class="num">08</span> 1200 控制 2 轴步进 + 1 轴伺服</h2>
+            <p class="section-label">Project 07</p>
+            <h2 class="section-title"><span class="num">07</span> 1200 控制 2 轴步进 + 1 轴伺服</h2>
         </div>
         <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
-            <span class="project-card-number">08</span>
+            <span class="project-card-number">07</span>
             <div class="project-deco">
                 <svg viewBox="0 0 120 80"><circle cx="28" cy="40" r="20" stroke="#2d7dd2" stroke-width="1.8" fill="none"/><circle cx="28" cy="40" r="20" fill="#2d7dd2" opacity="0.04"/><circle cx="28" cy="40" r="8" stroke="#2d7dd2" stroke-width="1.5" opacity="0.5" fill="none"/><circle cx="28" cy="40" r="3" fill="#2d7dd2" opacity="0.25"/><line x1="28" y1="20" x2="28" y2="14" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/><line x1="28" y1="60" x2="28" y2="66" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/><line x1="8" y1="40" x2="2" y2="40" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/><line x1="48" y1="40" x2="54" y2="40" stroke="#2d7dd2" stroke-width="1.5" opacity="0.4"/><circle cx="72" cy="16" r="14" stroke="#2d7dd2" stroke-width="1.8" fill="none"/><circle cx="72" cy="16" r="14" fill="#2d7dd2" opacity="0.04"/><circle cx="72" cy="16" r="5" stroke="#2d7dd2" stroke-width="1.2" opacity="0.4" fill="none"/><circle cx="72" cy="64" r="14" stroke="#2d7dd2" stroke-width="1.8" fill="none"/><circle cx="72" cy="64" r="14" fill="#2d7dd2" opacity="0.04"/><circle cx="72" cy="64" r="5" stroke="#2d7dd2" stroke-width="1.2" opacity="0.4" fill="none"/><line x1="72" y1="30" x2="72" y2="50" stroke="#2d7dd2" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.3"/><line x1="48" y1="40" x2="58" y2="40" stroke="#2d7dd2" stroke-width="1.5" opacity="0.2"/></svg>
             </div>
