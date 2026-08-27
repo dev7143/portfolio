@@ -87,6 +87,11 @@
         .placeholder-sub{font-size:12px;color:#aab5c2;margin-top:6px;position:relative}
         .vid-box{border-radius:12px;overflow:hidden;background:#000;position:relative;border:1px solid rgba(106,176,255,0.08);margin-bottom:16px;line-height:0}
         .vid-box video{width:100%;height:auto;display:block;min-height:200px;max-height:420px;object-fit:contain;background:#000}
+        .vid-play-overlay{position:absolute;top:0;left:0;right:0;bottom:0;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(5,10,20,0.28);cursor:pointer;transition:background .25s}
+        .vid-play-overlay:hover{background:rgba(5,10,20,0.45)}
+        .vid-play-icon{width:64px;height:64px;border-radius:50%;background:rgba(45,125,210,0.92);display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;line-height:1;padding-left:4px;box-shadow:0 4px 20px rgba(0,0,0,0.45);transition:transform .25s}
+        .vid-play-overlay:hover .vid-play-icon{transform:scale(1.1)}
+        .vid-play-hint{color:#dbe9ff;font-size:13px;margin-top:10px;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,0.7);letter-spacing:1px}
         .project-actions{display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
         .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 30px;border-radius:10px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:all .3s cubic-bezier(.25,.46,.45,.94);position:relative;overflow:hidden;letter-spacing:.5px}
         .btn-primary{background:linear-gradient(135deg,#0a2647,#143b6b);color:#fff;box-shadow:0 2px 8px rgba(10,38,71,0.2)}
@@ -1253,21 +1258,32 @@ function openPDF(url,title){window.open(url,'_blank')}
     // 优化滚动性能
     document.querySelectorAll('.vid-box video').forEach(function(v){v.setAttribute('webkit-playsinline','');v.setAttribute('playsinline','')});
 
-// ===== 视频懒加载 (IntersectionObserver) =====
+// ===== 视频按需加载：仅当用户点击播放时才加载该视频流 =====
 (function(){
-    if('IntersectionObserver' in window){
-        var obs=new IntersectionObserver(function(entries){
-            entries.forEach(function(e){
-                if(e.isIntersecting){
-                    var v=e.target;
-                    v.preload='auto';
-                    v.load();
-                    obs.unobserve(v);
-                }
-            });
-        },{rootMargin:'400px 0px'});
-        document.querySelectorAll('video[preload="metadata"]').forEach(function(v){obs.observe(v)});
+    function attach(v){
+        var box=v.closest('.vid-box')||v.closest('.featured-video-wrap')||v.parentNode;
+        if(!box)return;
+        // 摘取视频源并暂存，避免页面加载时预取视频流（多个视频同时抢带宽导致缓冲）
+        var sources=[];
+        v.querySelectorAll('source').forEach(function(s){ sources.push({src:s.getAttribute('src'),type:s.getAttribute('type')}); s.remove(); });
+        if(v.getAttribute('src')){ sources.push({src:v.getAttribute('src'),type:'video/mp4'}); v.removeAttribute('src'); }
+        v.preload='none';
+        // 只在海报层显示「点击播放」按钮
+        v.removeAttribute('controls');
+        var overlay=document.createElement('div');
+        overlay.className='vid-play-overlay';
+        overlay.innerHTML='<span class="vid-play-icon">&#9654;</span><span class="vid-play-hint">点击播放</span>';
+        overlay.addEventListener('click',function(e){
+            e.preventDefault();e.stopPropagation();
+            sources.forEach(function(s){ var ns=document.createElement('source'); ns.src=s.src; ns.type=s.type; v.appendChild(ns); });
+            v.load();
+            v.setAttribute('controls','');
+            v.play().catch(function(){});
+            overlay.remove();
+        });
+        box.appendChild(overlay);
     }
+    document.querySelectorAll('video').forEach(attach);
 })();
 </script>
 
