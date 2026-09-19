@@ -509,7 +509,7 @@
     
 /* ===== 性能优化：内容可见性 ===== */
 .section{content-visibility:auto;contain-intrinsic-size:1px 500px}
-#hero,#skills,#project_warehouse,#project_featured32,#project_featured,#project_sort,#project3,#project_watertank,#project5,#project6{content-visibility:auto;contain-intrinsic-size:1px 500px}
+#hero,#skills,#project_warehouse,#project_featured32,#project_featured,#project_sort,#project3,#project_watertank,#project5,#project6,#project_axis{content-visibility:auto;contain-intrinsic-size:1px 500px}
 .hero{content-visibility:visible}
 footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
 @media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
@@ -562,6 +562,7 @@ footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
             <li><a href="#project_watertank" class="nav-link">项目三</a></li>
             <li><a href="#project5" class="nav-link">项目四</a></li>
             <li><a href="#project6" class="nav-link">项目五</a></li>
+            <li><a href="#project_axis" class="nav-link">项目六</a></li>
             
             
             <li><a href="#contact" class="nav-link">联系方式</a></li>
@@ -1073,6 +1074,64 @@ footer{content-visibility:auto;contain-intrinsic-size:1px 300px}
 </section>
 
 
+<section class="section section-alt" id="project_axis">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-label">Project 06</p>
+            <h2 class="section-title"><span class="num">06</span> 多轴坐标定位与码垛（笛卡尔机器人 + 三轴码垛）</h2>
+        </div>
+        <div class="project-card reveal" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
+            <span class="project-card-number">06</span>
+            <div class="project-deco">
+                <svg viewBox="0 0 120 80"><line x1="14" y1="66" x2="106" y2="66" stroke="#2d7dd2" stroke-width="2"/><line x1="14" y1="66" x2="14" y2="14" stroke="#2d7dd2" stroke-width="2"/><line x1="14" y1="66" x2="52" y2="38" stroke="#2d7dd2" stroke-width="1.5" opacity="0.5"/><rect x="44" y="26" width="22" height="16" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none"/><rect x="58" y="44" width="22" height="16" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none" opacity="0.7"/><rect x="40" y="46" width="22" height="16" rx="3" stroke="#2d7dd2" stroke-width="1.5" fill="none" opacity="0.45"/></svg>
+            </div>
+            <div class="project-tags">
+                <span class="project-tag">Factory IO</span>
+                <span class="project-tag">S7-1500</span>
+                <span class="project-tag">笛卡尔坐标</span>
+                <span class="project-tag">码垛</span>
+            </div>
+            <p class="project-desc">在 Factory IO 中实现笛卡尔坐标系（直角坐标）机器人与三轴码垛系统：笛卡尔机器人完成坐标定义、运动学解算与目标位置计算，实现多轴联动定位与工件抓取放置；三轴码垛完成坐标定位、垛型（分层 / 行列）规划与顺序堆叠控制。</p>
+            <div class="project-videos">
+                <div class="vid-card">
+                    <div class="vid-box">
+                        <iframe src="https://player.bilibili.com/player.html?bvid=BV1YLeh6AEaN&page=1&danmaku=0&high_quality=1&autoplay=0" allowfullscreen scrolling="no" style="width:100%;aspect-ratio:16/9;border:0;background:#000;display:block;border-radius:8px"></iframe>
+                    </div>
+                    <div class="vid-label">笛卡尔坐标系机器人 · 运动学解算与多轴联动</div>
+                    <p class="vid-desc">坐标定义与运动学解算、目标位置计算、多轴联动定位与走位控制，完成工件的坐标抓取与放置。</p>
+                </div>
+                <div class="vid-card">
+                    <div class="vid-box">
+                        <iframe src="https://player.bilibili.com/player.html?bvid=BV1eLeh6AEYb&page=1&danmaku=0&high_quality=1&autoplay=0" allowfullscreen scrolling="no" style="width:100%;aspect-ratio:16/9;border:0;background:#000;display:block;border-radius:8px"></iframe>
+                    </div>
+                    <div class="vid-label">三轴码垛 · 垛型规划与坐标定位</div>
+                    <p class="vid-desc">三轴坐标定位、码垛垛型（分层 / 行列）规划、顺序抓取与堆叠控制。</p>
+                </div>
+            </div>
+            <div class="project-detail-grid">
+                <div class="project-detail-card">
+                    <div class="project-detail-icon">🎯</div>
+                    <div class="project-detail-title">定位方式</div>
+                    <div class="project-detail-val">笛卡尔坐标 · 运动学解算</div>
+                </div>
+                <div class="project-detail-card">
+                    <div class="project-detail-icon">📦</div>
+                    <div class="project-detail-title">应用</div>
+                    <div class="project-detail-val">三轴码垛 · 垛型规划</div>
+                </div>
+                <div class="project-detail-card">
+                    <div class="project-detail-icon">🔗</div>
+                    <div class="project-detail-title">平台</div>
+                    <div class="project-detail-val">Factory IO 3D</div>
+                </div>
+            </div>
+            <div class="project-keypoints">
+                <div class="project-keypoints-title">💡 设计要点</div>
+                <p>笛卡尔坐标系运动学解算与多轴联动定位，三轴码垛垛型规划与顺序堆叠；覆盖坐标定义、目标计算到垛型控制的完整控制逻辑。</p>
+            </div>
+        </div>
+    </div>
+</section>
 <footer class="footer" id="contact">
     <div class="dot-grid"><div class="dot-grid-inner"></div></div>
     <div class="footer-circuit">
